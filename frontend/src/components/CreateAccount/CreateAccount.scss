@@ -1,0 +1,54 @@
+.create-account-section {
+    width: 700px;
+    height: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #C1CEB4;
+    color: black;
+    text-align: center;
+}
+
+.create-account-heading {
+    text-align: center;
+    font-size: 34px;
+    margin-top: -10px;
+    font-weight: 500;
+
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    text-align: center;
+    color: black;
+}
+
+.form-group button {
+    width: 300px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #5A8D68;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}

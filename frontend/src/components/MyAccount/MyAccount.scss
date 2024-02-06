@@ -1,0 +1,160 @@
+.my_account_container {
+    margin-left: 40px;
+}
+
+.button_account {
+    width: 307px;
+    height: 76px;
+    border: none;
+    border-radius: 70px;
+    background: #84AE7D;
+    margin-left: 60px;
+}
+
+.button_account_text {
+    color: #000;
+    text-align: center;
+    font-family: Spectral SC;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.go_back_img {
+    margin-right: 20px;
+}
+
+.my_account_header {
+    margin-left: 900px;
+    color: #000;
+    text-align: center;
+    font-family: Spectral SC;
+    font-size: 85px;
+    font-weight: 400;
+}
+
+.account_header {
+    display: flex;
+    align-items: center;
+    // margin-bottom: 100px;
+}
+
+.account_info {
+    margin-left: 8%;
+    margin-top: 4%;
+    text-align: left;
+}
+
+.account_photo {
+    margin-left: 60px;
+}
+
+.button_edit_account {
+    margin-top: 30%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 76px;
+    border: none;
+    border-radius: 70px;
+    background: #84AE7D;
+    margin-left: 130%;
+    margin-bottom: 30%;
+}
+
+.button_edit_text {
+    color: #000;
+    text-align: center;
+    font-family: Spectral SC;
+    font-size: 40px;
+    font-weight: 300;
+    margin-left: 20%;
+}
+
+.edit_img {
+    transform: rotate(8.493deg);
+}
+
+.edit_button_text {
+    color: #000;
+    text-align: center;
+    font-family: Spectral SC;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.edit_account_button {
+    color: #829D71;
+}
+
+.account_details {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: #000;
+    text-align: center;
+    font-family: Source Serif Pro;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 600;
+    margin-left: 340px;
+}
+
+.button_my_dogs,
+.button_relatives {
+    width: 650px;
+    height: 100px;
+    background-color: #B1D1AC;
+    outline: none;
+    border: none;
+    border-radius: 70px;
+    padding: 10px 20px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button_my_dogs_text,
+.button_relatives_text {
+    color: #000;
+    text-align: center;
+    font-family: "Source Serif Pro";
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.account_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.my_account_container {
+    position: relative;
+    padding: 20px;
+}
+
+.my_account_container_buttons {
+    position: relative;
+    padding: 20px; 
+}
+
+.background_rectangle {
+    // position: absolute;
+    border-radius: 70px;
+    width: 95%;
+    height: 100%;
+    background-color: #EAF7DD;
+    z-index: -1;
+}
+
+.background_rectangle_buttons {
+    border-radius: 70px;
+    width: 95%;
+    height: 100%;
+    background-color: #EAF7DD;
+    z-index: -1;
+    margin-top: 1%;
+    margin-left: 1.5%;
+}

@@ -1,0 +1,28 @@
+.header {
+    height: 200px;
+    background-color: #B9D1A1;
+    color: black;
+}
+
+.nav_ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-family: Zen Old Mincho;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.nav_ul li {
+    margin-right: 10%;
+}
+
+.nav_ul li:last-child {
+    margin-right: 0;
+}
+
+.logo {
+    margin-top: 15px;
+}
