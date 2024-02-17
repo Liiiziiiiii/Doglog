@@ -7,22 +7,24 @@ import MyAcc from './components/MyAcc/MyAcc';
 import CreateAccount from './components/CreateAccount/CreateAccount';
 import FooterReg from './components/FooterReg/FooterReg';
 import ObjectDogElem from './components/ObjectDog/ObjectDogElem';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
 
     return (
         <Router>
-        {/* <Routes>
+            {/* <Routes>
             <Route path="/" element={<MyAcc />} />
             <Route path="/create-account" element={<CreateAccount />} />
         </Routes>
         <FooterReg /> */}
-        <div>
-            <Header />
-            <MyAccount />
-            <ObjectDog />
-        </div>
-    </Router>
+            <div>
+                <Header />
+                <MyAccount />
+                <ObjectDog />
+            </div>
+            <Footer />
+        </Router>
     );
 }
 

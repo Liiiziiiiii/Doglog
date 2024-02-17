@@ -1,20 +1,23 @@
 .object_dog {
     // max-width: 80%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    margin-right: 50px;
+    // align-items: center;
+    justify-content: center;
     margin-top: 5%;
-    // margin-bottom: 500px;
+    margin-right: 100px;
+    margin-bottom: 100px;
 
     .container {
-        width: 300px;
+        // width: 300px;
         text-align: center;
     }
 
     .img_dog {
         width: 100%;
-        height: 200px;
+        height: 210px;
         overflow: hidden;
+        margin-top: 10%;
 
         img {
             width: 100%;
@@ -22,16 +25,16 @@
         }
     }
 
-    .image {
-        width: 100%;
-        height: 100px;
-        overflow: hidden;
+    // .image {
+    //     width: 100%;
+    //     height: 100px;
+    //     overflow: hidden;
 
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
+    //     img {
+    //         width: 100%;
+    //         height: auto;
+    //     }
+    // }
 
     .section {
         margin-bottom: 10px;
@@ -43,13 +46,22 @@
     }
 }
 
-// .name_dog {
-//     color: #000;
-//     text-align: center;
-//     font-family: "Spectral SC";
-//     font-size: 40px;
-//     font-weight: 600;
-// }
+// .container_button_add_dog {}
+
+.button_add_dog {
+    // max-width: 585px;
+    // max-height: 791px;
+    background-color: #B0C997;
+    border: 3px solid #471E1E;
+    padding: 15% 2%;
+    cursor: pointer;
+    border-radius: 45px;
+}
+
+.plus_but {
+    padding: 50px;
+    max-height: 20%;
+}
 
 // p {
 //     color: #000;
@@ -61,11 +73,12 @@
 //     line-height: normal;
 // }
 
+.name_dog,
 .breed_dog,
 .age_dog,
-.sex_dog {
+.gender_dog {
 
-    .sex_text,
+    .gender_text,
     .age_text,
     .breed_text {
         color: #000;
@@ -82,7 +95,7 @@
     margin-left: auto;
     display: flex;
     align-items: center;
-    width: 350px;
+    width: 105%;
     height: 76px;
     border: none;
     border-radius: 70px;
@@ -97,9 +110,42 @@
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    margin-left: 60px;
+    margin-left: 11%;
 }
 
 .edit_img {
     transform: rotate(8.493deg);
+}
+
+.dog_list {
+    display: flex;
+}
+
+.ul_dog {
+    margin-right: 40px;
+}
+
+.dog_list ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container_dog_list {
+    display: flex;
+}
+
+.object_dog {
+    position: relative;
+    height: 530px;
+}
+
+.background_rect {
+    position: absolute;
+    width: 130%;
+    height: 110%;
+    background-color: #B0C997;
+    border-radius: 70px;
+    border: 3px solid #471E1E;
+    z-index: -1;
 }

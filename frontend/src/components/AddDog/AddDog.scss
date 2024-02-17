@@ -6,10 +6,10 @@
 }
 
 .modal_add_dog {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // height: 100vh;
 }
 
 .form-container {
@@ -48,10 +48,54 @@ input[type="submit"]:hover {
 }
 
 .name_dog,
-.breed_dog {
+.breed_dog,
+.coat_dog,
+.dob_dog,
+.gender_dog,
+.height_dog,
+.weight_dog,
+.number_dog {
     color: #000;
     text-align: center;
     font-family: "Spectral SC";
     font-size: 40px;
     font-weight: 600;
 }
+
+.container_dogs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container_dog_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.object_dog {
+    flex-basis: calc(30.33% - 20px);
+    margin-bottom: 20px;
+}
+
+// .container_button_add_dog {
+//     flex-basis: calc(33.33% - 20px);
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-bottom: 20px;
+// }
+
+// .button_add_dog {
+//     background-color: #ffffff;
+//     border: 1px solid #cccccc;
+//     border-radius: 50%;
+//     padding: 10px;
+//     cursor: pointer;
+// }
+
+// .plus_but {
+//     width: 20px;
+//     height: 20px;
+// }
