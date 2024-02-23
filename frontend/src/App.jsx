@@ -8,10 +8,20 @@ import CreateAccount from './components/CreateAccount/CreateAccount';
 import FooterReg from './components/FooterReg/FooterReg';
 import ObjectDogElem from './components/ObjectDog/ObjectDogElem';
 import Footer from './components/Footer/Footer';
+import './normalize.scss';
+import './App.scss'
+
 
 const App = () => {
 
     return (
+        <div className='App'>
+            {/* <Header/>
+            <CreateAccount/>
+            <MyAcc/>
+            <AddDog/>
+            <FooterReg/> */}
+
         <Router>
             {/* <Routes>
             <Route path="/" element={<MyAcc />} />
@@ -25,6 +35,7 @@ const App = () => {
             </div>
             <Footer />
         </Router>
+        </div>
     );
 }
 

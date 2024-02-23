@@ -1,7 +1,7 @@
 .header {
-    height: 200px;
+    // height: 200px;
+    width: 100%;
     background-color: #B9D1A1;
-    color: black;
 }
 
 .nav_ul {
@@ -13,10 +13,16 @@
     font-family: Zen Old Mincho;
     font-size: 48px;
     font-weight: 400;
+    justify-content: space-around;
 }
 
 .nav_ul li {
     margin-right: 10%;
+}
+
+ul.nav_ul {
+    padding-left: 0;
+    margin: 0;
 }
 
 .nav_ul li:last-child {

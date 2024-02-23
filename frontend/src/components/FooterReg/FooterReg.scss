@@ -3,7 +3,22 @@
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+}
+
+footer .logosContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer .logo {
+    width: 200px;
+    justify-self: center;
+
+}
+
+footer .socialNetworksLogo {
+    width: 40px;
+    height: 40px;
 }
