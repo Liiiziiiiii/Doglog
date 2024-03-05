@@ -9,6 +9,6 @@ namespace ApiProject.Model
         {
 
         }
-        public DbSet<RegistarationUser> Users { get; set; }
+        public DbSet<RegistarationUser> users { get; set; }
     }
 }
