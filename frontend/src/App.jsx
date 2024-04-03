@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import MyAccount from './components/MyAccount/MyAccount';
 import ObjectDog from './components/ObjectDog/ObjectDog';
-import MyAcc from './components/MyAcc/MyAcc';
+import LogIn from './components/LogIn/LogIn';
 import CreateAccount from './components/CreateAccount/CreateAccount';
-import FooterReg from './components/FooterReg/FooterReg';
+import FooterReg from './components/Footer/Footer';
 import ObjectDogElem from './components/ObjectDog/ObjectDogElem';
-import Footer from './components/Footer/Footer';
+import Footer from './components/kjn/Footer';
 import './normalize.scss';
 import './App.scss'
 

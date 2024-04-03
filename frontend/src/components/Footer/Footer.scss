@@ -1,21 +1,24 @@
-.logo-container {
+.footer {
+    background-color: #758664;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+footer .logosContainer {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: #00a572;
+    justify-content: center;
+    gap: 10px;
+}
 
-    .logo {
-        font-size: 2em;
-        color: black;
-    }
+footer .logo {
+    width: 200px;
+    justify-self: center;
 
-    .social-icons {
-        display: flex;
-        justify-content: space-between;
-        width: 100px;
+}
 
-        i {
-            font-size: 1.5em;
-        }
-    }
+footer .socialNetworksLogo {
+    width: 40px;
+    height: 40px;
 }

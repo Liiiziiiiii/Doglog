@@ -1,34 +1,32 @@
 .header {
-    // height: 200px;
+    height: 100px;
     width: 100%;
     background-color: #B9D1A1;
 }
 
+.logoNav{
+    width: 200px;
+    margin: auto;
+}
+
 .nav_ul {
+    height: 100px;
     list-style: none;
     padding: 0;
     display: flex;
     text-align: center;
     align-items: center;
+    justify-content: center;
     font-family: Zen Old Mincho;
-    font-size: 48px;
+    font-size: 24px;
     font-weight: 400;
     justify-content: space-around;
 }
 
-.nav_ul li {
-    margin-right: 10%;
-}
 
 ul.nav_ul {
     padding-left: 0;
     margin: 0;
 }
 
-.nav_ul li:last-child {
-    margin-right: 0;
-}
 
-.logo {
-    margin-top: 15px;
-}

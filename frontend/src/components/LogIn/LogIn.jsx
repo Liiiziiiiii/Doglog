@@ -3,9 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
-import './MyAcc.scss';
+import './LogIn.scss';
+import { Footer } from '../Footer';
 
-const MyAcc = () => {
+const LogIn = () => {
     const navigate = useNavigate();
 
     const formik = useFormik({
@@ -50,6 +51,7 @@ const MyAcc = () => {
     
 
     return (
+        <>
         <form className="myacc" onSubmit={formik.handleSubmit}>
             <div>
                 <h1>Мій Акаунт</h1>
@@ -71,7 +73,9 @@ const MyAcc = () => {
                 <Link to="/register" className="create-account-button">Створити акаунт</Link>
             </div>
         </form>
+        <Footer/>
+        </>
     );
 };
 
-export default MyAcc;
+export default LogIn;

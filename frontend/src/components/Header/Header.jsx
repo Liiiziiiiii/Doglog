@@ -8,7 +8,7 @@ const Header = () => {
             <nav>
                 <ul className='nav_ul'>
                     <li>
-                        <img className='logo' src={logo} alt='логотип' />
+                        <img className='logoNav' src={logo} alt='логотип' />
                     </li>
                     <li>Головна</li>
                     <li>Мій акаунт</li>

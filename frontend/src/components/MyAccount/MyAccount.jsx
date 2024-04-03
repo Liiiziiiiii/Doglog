@@ -3,11 +3,14 @@ import './MyAccount.scss';
 import go_back from "../../images/go_back.png";
 import account_photo from "../../images/account_photo.png";
 import edit_img from "../../images/edit_account.png";
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 
 const MyAccount = () => {
     return (
         <div className='my_account_container'>
+            <Header/>
             <div className='account_header'>
                 <button className='button_account'>
                     <img className='go_back_img' src={go_back} alt='go back img' />
@@ -39,14 +42,36 @@ const MyAccount = () => {
             </div>
             <div className="my_account_container_buttons background_rectangle_buttons">
                 <div className='account_buttons'>
-                    <button className='button_my_dogs'>
-                        <span className='button_my_dogs_text'>Мої собаки</span>
+                    <button className='button_relatives'>
+                    Мої собаки
                     </button>
                     <button className='button_relatives'>
-                        <span className='button_relatives_text'>Родичі моїх собак</span>
-                    </button>
+                    Обране                   </button>
+                    <button className='button_relatives'>
+                    Родичі моїх собак                    </button>
                 </div>
             </div>
+            <div className='my_dogs_container '>
+                <div className='dog_card'>
+                    <img src="" alt="" />
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div className='dog_card'>
+                    <img src="" alt="" />
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div className='dog_card'>
+                    <img src="" alt="" />
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+            <Footer/>
         </div>
     );
 };

@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { Footer } from '../Footer';
 
 
 const CreateAccount = () => {
@@ -74,6 +75,7 @@ const CreateAccount = () => {
                     </div>
                 </form>
             </div>
+            <Footer/>
         </div>
     );
 };
