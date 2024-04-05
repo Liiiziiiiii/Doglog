@@ -2,8 +2,8 @@ import './App.css';
 import { CreateAccount } from './components/CreateAccount';
 import LogIn from './components/LogIn/LogIn';
 import MyAccount from './components/MyAccount/MyAccount';
+import AddDog from './components/AddDog/AddDog';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 
 function App() {
   return (
@@ -12,7 +12,10 @@ function App() {
         <Routes >
         <Route exact path="/" element={<LogIn />} />
         <Route exact path="/register" element={<CreateAccount />} />
-        <Route exact path="/myaccount" element={<MyAccount />} />
+        <Route exact path="/myaccount/:userId" element={<MyAccount />} />
+        <Route exact path="/addDog" element={<AddDog />} />
+
+
       </Routes>
     </Router>
     </div>

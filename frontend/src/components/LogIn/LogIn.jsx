@@ -25,8 +25,12 @@ const LogIn = () => {
 
                 if (response.status === 200) {
                     console.log("Login successful");
-                    window.localStorage.setItem("token", response.data);
-                    navigate("/myaccount");
+                    console.log("Login successful", response.data);
+
+
+                    window.localStorage.setItem("token", response);
+                    navigate(`/myaccount/${response.data}`);
+
                 }
             } catch (error) {
                 console.error('Error:', error);
