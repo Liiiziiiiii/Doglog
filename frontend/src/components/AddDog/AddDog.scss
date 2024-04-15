@@ -1,45 +1,85 @@
 .form_dog {
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    // flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #5F6F4E;
+    border: 3px solid #724040;
+    border-radius: 70px;
+    padding: 20px;
+    gap: 20px;
+    flex-direction: row;
+
+    .image_dog {
+        input {
+            display: none;
+        }
+    }
+
+    .form_fields {
+        label {
+            font-weight: bold;
+            font-family: "Spectral SC";
+            -webkit-text-fill-color: black;
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: rgb(255, 255, 255);
+            margin-right: 30px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: geometricPrecision;
+        }
+
+        input {
+            width: 60%;
+            border: 10px solid #DEEED5;
+            border-radius: 70px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        select {
+            width: 60%;
+            border: 10px solid #DEEED5;
+            border-radius: 70px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    }
 }
 
 .modal_add_dog {
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // height: 100vh;
-}
-
-.form-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    // height: 100vh;
+    height: 100%;
+    width: 100%;
+    margin-left: 100px;
 }
 
-label {
-    margin-bottom: 8px;
+.submit_button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 70px;
+    padding: 10px 15px;
+    font-size: 26px;
+    cursor: pointer;
 }
 
-input,
-select {
-    margin-bottom: 16px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.submit_button:hover {
+    background-color: #45a049;
 }
 
 input[type="submit"] {
+    height: 100px;
+    width: 200px;
     background-color: #4CAF50;
     color: white;
-    padding: 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 70px;
     cursor: pointer;
 }
 
@@ -60,6 +100,8 @@ input[type="submit"]:hover {
     font-family: "Spectral SC";
     font-size: 40px;
     font-weight: 600;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .container_dogs {
@@ -70,32 +112,18 @@ input[type="submit"]:hover {
 
 .container_dog_list {
     display: flex;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.object_dog {
-    flex-basis: calc(30.33% - 20px);
-    margin-bottom: 20px;
+.add_photo_icon_dog {
+    max-width: 200px;
+    max-height: 200px;
 }
 
-// .container_button_add_dog {
-//     flex-basis: calc(33.33% - 20px);
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin-bottom: 20px;
-// }
-
-// .button_add_dog {
-//     background-color: #ffffff;
-//     border: 1px solid #cccccc;
-//     border-radius: 50%;
-//     padding: 10px;
-//     cursor: pointer;
-// }
-
-// .plus_but {
-//     width: 20px;
-//     height: 20px;
-// }
+.photo_dog {
+    height: 1028px;
+    width: 1348px;
+    border-radius: 70px;
+    background-color: #CBDCBB;
+}
