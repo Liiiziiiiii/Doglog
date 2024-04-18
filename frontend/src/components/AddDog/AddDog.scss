@@ -1,15 +1,16 @@
 .form_dog {
     display: flex;
+    height: 700px;
     width: 100%;
-    // flex-direction: column;
+    margin: auto;
     align-items: center;
     justify-content: center;
     background-color: #5F6F4E;
     border: 3px solid #724040;
-    border-radius: 70px;
-    padding: 20px;
-    gap: 20px;
+    border-radius: 40px;
+    gap: 40px;
     flex-direction: row;
+    
 
     .image_dog {
         input {
@@ -18,6 +19,8 @@
     }
 
     .form_fields {
+        margin: 20px 40px 20px 40px;
+
         label {
             font-weight: bold;
             font-family: "Spectral SC";
@@ -31,21 +34,34 @@
         }
 
         input {
-            width: 60%;
+            width: 250px;
             border: 10px solid #DEEED5;
             border-radius: 70px;
             padding: 10px 15px;
-            margin-bottom: 10px;
             font-size: 16px;
         }
 
+        .basicInput{
+            margin-top: 10px;
+            width: 400px;
+        }
+
         select {
-            width: 60%;
+            width: 250px;
             border: 10px solid #DEEED5;
             border-radius: 70px;
             padding: 10px 15px;
-            margin-bottom: 10px;
             font-size: 16px;
+        }
+        .wrapper{
+            width: 450px;
+            margin-top: 10px;
+            background-color:#DEEED5;
+            border-radius: 40px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
@@ -53,19 +69,19 @@
 .modal_add_dog {
     display: flex;
     justify-content: center;
-    // height: 100vh;
-    height: 100%;
-    width: 100%;
-    margin-left: 100px;
+    width: 90%;
+    margin: auto;
 }
 
 .submit_button {
-    background-color: #007bff;
+    width: 200px;
     color: #fff;
+    background-color: #DEEED5;
     border: none;
-    border-radius: 70px;
+    margin-top: 10px;
+    border-radius: 40px;
     padding: 10px 15px;
-    font-size: 26px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -73,19 +89,6 @@
     background-color: #45a049;
 }
 
-input[type="submit"] {
-    height: 100px;
-    width: 200px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 70px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
 
 .name_dog,
 .breed_dog,
@@ -112,18 +115,18 @@ input[type="submit"]:hover {
 
 .container_dog_list {
     display: flex;
-    // flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .add_photo_icon_dog {
-    max-width: 200px;
-    max-height: 200px;
+    width: 200px;
+    height: 200px;
 }
 
 .photo_dog {
-    height: 1028px;
-    width: 1348px;
+    height: 500px;
+    width: 500px;
+    margin: 20px 40px 20px 40px;
     border-radius: 70px;
     background-color: #CBDCBB;
 }

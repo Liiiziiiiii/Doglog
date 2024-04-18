@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import MyAccount from './components/MyAccount/MyAccount';
 import ObjectDog from './components/ObjectDog/ObjectDog';
+import AddDog from './components/AddDog/AddDog';
 import LogIn from './components/LogIn/LogIn';
 import CreateAccount from './components/CreateAccount/CreateAccount';
 import FooterReg from './components/Footer/Footer';
@@ -32,6 +33,8 @@ const App = () => {
                 <Header />
                 <MyAccount />
                 <ObjectDog />
+                <AddDog></AddDog>
+
             </div>
             <Footer />
         </Router>

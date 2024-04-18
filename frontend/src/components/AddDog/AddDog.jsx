@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './AddDog.scss';
-import add_photo_icon from "../../images/add_photo_icon.png";
+import add_photo_icon from "../../images/add_photo_icon.png"
+import Header from '../Header/Header';
+import FooterReg from '../Footer/Footer';
 
 
 const AddDog = ({ closeModal, onAddDog, dog }) => {
@@ -37,6 +39,8 @@ const AddDog = ({ closeModal, onAddDog, dog }) => {
 
 
     return (
+        <>
+        <Header></Header>
         <div className="modal_add_dog">
             <form onSubmit={handleSubmit}>
                 <div className='form_dog'>
@@ -48,26 +52,22 @@ const AddDog = ({ closeModal, onAddDog, dog }) => {
                     </div>
                     <div className='form_fields'>
                         <div>
-                            <label className='name_dog'>Кличка:</label>
-                            <input type="text" id="name_dog" name="name_dog" value={formData.name_dog} onChange={handleChange} />
+                            <input className='basicInput' placeholder="Кличка:" type="text" id="name_dog" name="name_dog" value={formData.name_dog} onChange={handleChange} />
                         </div>
 
                         <div>
-                            <label className='breed_dog'>Порода:</label>
-                            <input type="text" id="breed_dog" name="breed_dog" value={formData.breed_dog} onChange={handleChange} />
+                            <input className='basicInput' placeholder="Порода:" type="text" id="breed_dog" name="breed_dog" value={formData.breed_dog} onChange={handleChange} />
                         </div>
 
                         <div>
-                            <label className='coat_dog'>Шерсть:</label>
-                            <input type="text" id="coat_dog" name="coat_dog" value={formData.coat_dog} onChange={handleChange} />
+                            <input className='basicInput' placeholder="Шерсть:" type="text" id="coat_dog" name="coat_dog" value={formData.coat_dog} onChange={handleChange} />
                         </div>
 
                         <div>
-                            <label className='dob_dog'>Дата народження:</label>
-                            <input type="date" id="dob_dog" name="dob_dog" value={formData.dob_dog} onChange={handleChange} />
+                            <input className='basicInput' placeholder="Дата народження:"type="date" id="dob_dog" name="dob_dog" value={formData.dob_dog} onChange={handleChange} />
                         </div>
 
-                        <div>
+                        <div className='wrapper'>
                             <label className='gender_dog'>Стать:</label>
                             <select id="gender_and_dog" name="gender_dog">
                                 <option value="male">Чоловіча</option>
@@ -75,29 +75,27 @@ const AddDog = ({ closeModal, onAddDog, dog }) => {
                             </select>
                         </div>
 
-                        <div>
+                        <div className='wrapper'>
                             <label className='height_dog'>Зріст:</label>
                             <input type="number" id="height_dog" name="height_dog" placeholder="Введіть ріст в см" value={formData.height_dog} onChange={handleChange} min="0" />
                         </div>
 
-                        <div>
+                        <div className='wrapper'>
                             <label className="weight_dog">Вага:</label>
-                            <input type="number" id="weight_dog" name="weight_dog" placeholder="Введіть вагу в кг" value={formData.weight_dog} onChange={handleChange} min="0" />
+                            <input  type="number" id="weight_dog" name="weight_dog" placeholder="Введіть вагу в кг" value={formData.weight_dog} onChange={handleChange} min="0" ></input>
                         </div>
 
-                        <div>
+                        <div className='wrapper' >
                             <label className="number_dog">Чіп:</label>
                             <input type="number" id="number_dog" name="number_dog" placeholder="Введіть номер чипу (необов'язково)" value={formData.number_dog} onChange={handleChange} min="0" />
                         </div>
+                        <button className='submit_button'>Save</button>
                     </div>
-
-                    <div>
-                        <button className='submit_button'><input type="submit" value="Create" /></button>
-                    </div>
-
                 </div>
             </form>
         </div>
+        <FooterReg></FooterReg>
+        </>
     );
 };
 
