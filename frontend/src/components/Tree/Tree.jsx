@@ -1,36 +1,41 @@
-import React from 'react';
-import { useTree } from './TreeProvider';
+import React, { useState } from 'react';
+import Dog from './DogModel';
 
-const DogNode = ({ id }) => {
-  const { dogs, addDog, removeDog } = useTree();
-  const dog = dogs[id];
+const Tree = ({ dog }) => {
+  const [currentDog, setCurrentDog] = useState(dog);
 
-  const handleAddChild = () => {
-    const newDog = { id: Date.now().toString(), name: 'New Puppy', parents: [], children: [] };
-    addDog(dog.id, newDog, true);
+  const addParent = (parentType, name) => {
+    const newParent = new Dog(name);
+    const updatedDog = { ...currentDog };
+    updatedDog.parents[parentType] = newParent;
+    setCurrentDog(updatedDog);
   };
 
-  const handleAddParent = () => {
-    const newDog = { id: Date.now().toString(), name: 'New Parent', parents: [], children: [] };
-    addDog(dog.id, newDog, false);
+  const renderDog = (dog, depth = 0) => {
+    if (!dog) return null;
+    
+    return (
+      <div style={{ marginLeft: `${depth * 20}px` }}>
+        <div onClick={() => addParent('father', prompt('Father\'s name'))}>
+          Father: {dog.parents.father ? dog.parents.father.name : "Add Father"}
+        </div>
+        <div onClick={() => addParent('mother', prompt('Mother\'s name'))}>
+          Mother: {dog.parents.mother ? dog.parents.mother.name : "Add Mother"}
+        </div>
+        <div>
+          Name: {dog.name}
+        </div>
+        {renderDog(dog.parents.father, depth + 1)}
+        {renderDog(dog.parents.mother, depth + 1)}
+      </div>
+    );
   };
 
   return (
     <div>
-      {dog.name}
-      <button onClick={handleAddChild}>Add Child</button>
-      <button onClick={handleAddParent}>Add Parent</button>
-      <button onClick={() => removeDog(dog.id)}>Remove</button>
-      <div style={{ marginLeft: 20 }}>
-        <strong>Parents:</strong>
-        {dog.parents.map(parentId => (
-          <DogNode key={parentId} id={parentId} />
-        ))}
-        <strong>Children:</strong>
-        {dog.children.map(childId => (
-          <DogNode key={childId} id={childId} />
-        ))}
-      </div>
+      {renderDog(currentDog)}
     </div>
   );
 };
+
+export default Tree;
