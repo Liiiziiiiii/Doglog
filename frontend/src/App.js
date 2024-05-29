@@ -19,8 +19,6 @@ function App() {
         <Route exact path="/myaccount/:userId" element={<MyAccount />} />
         <Route exact path="/addDog" element={<AddDog />} />
         <Route exact path="/tree" element={<Tree dog={rootDog}/>}/>
-
-
       </Routes>
     </Router>
     </div>
