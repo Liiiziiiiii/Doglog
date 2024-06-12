@@ -1,0 +1,21 @@
+.Tree {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.TreeObject {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    border-radius: 50px;
+    align-self: center;
+}
+
+.ObjectPair{
+    display: flex;
+    justify-content: space-around;
+
+    
+}
