@@ -1,14 +1,17 @@
 .Tree {
-    height: 600px;
+    height: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    background-color: #C1CEB4;
 }
 
 .TreeObject {
     width: 200px;
     height: 200px;
-    background-color: green;
+    background-color: #BBD7A2;
+    border: 3px;
+    border-color: #483636;
     border-radius: 50px;
     align-self: center;
 }

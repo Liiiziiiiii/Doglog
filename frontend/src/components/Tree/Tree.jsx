@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Dog from "./DogModel";
 import "./Tree.css";
+import AddPicture from "../../images/add_picture.png"
+
 
 const Tree = ({ dog }) => {
   const [currentDog, setCurrentDog] = useState(dog);
@@ -17,15 +19,17 @@ const Tree = ({ dog }) => {
 
     return (
       <div className="Tree">
-        <div className="TreeObject">Name: {dog.name}</div>
+        <div className="TreeObject">Name: {dog.name} <img src={AddPicture}/></div>
         <div className="ObjectPair">
           <div>
+          
           Father:{" "}
             {dog.parents.father ? dog.parents.father.name : "Add Father"}
           <div
             className="TreeObject"
             onClick={() => addParent("father", prompt("Father's name"))}
           >
+            <img className="" src={AddPicture}/>
           </div>
           </div>
           
@@ -36,7 +40,7 @@ const Tree = ({ dog }) => {
               className="TreeObject"
               onClick={() => addParent("mother", prompt("Mother's name"))}
             >
-              
+              <img src={AddPicture}/>
             </div>
           </div>
         </div>
