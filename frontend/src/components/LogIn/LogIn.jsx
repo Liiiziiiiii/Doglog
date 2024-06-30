@@ -1,20 +1,24 @@
 import React, { useState } from "react";
+import {useDispatch} from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import "./LogIn.scss";
+import { login } from "../../store";
 import { Footer } from "../Footer";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const dispatch = useDispatch();
+
   const handleSubmit = (e)=>{
     e.preventDefault()
-
+    dispatch(login({email, password}))
   }
 
   return (
     <>
-      <form className="myacc" >
+      <form className="myacc" onSubmit={handleSubmit} >
         <div>
           <h1>Мій Акаунт</h1>
           <div>
