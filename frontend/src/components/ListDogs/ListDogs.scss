@@ -1,0 +1,389 @@
+.filters_dogs {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 35px;
+}
+
+.bi-person-circle::before {
+    content: "";
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    justify-content: flex-end;
+    transform: translateX(390px);
+}
+
+.navigation{
+    display: block;
+
+}
+
+.nav_filters_dogs {
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    width: 63%;
+    padding-top: 25px;
+    justify-content: space-between;
+}
+
+.button_return {
+    cursor: pointer;
+    flex-grow: 0.02;
+    width: 200px;
+    height: 47px;
+    border: none;
+    border-radius: 70px;
+    background: #84AE7D;
+}
+
+.button_return_text {
+    color: #000;
+    text-align: center;
+    font-family: Spectral SC;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.go_back_img {
+    margin-right: 20px;
+}
+
+.name_of_breed_header {
+    color: #000;
+    font-family: Spectral SC;
+    font-size: 45px;
+    font-weight: 540;
+    margin-left: 280px;
+}
+
+.container_fur,
+.conteiner_child,
+.conteiner_age {
+    background-color: #DEEED5;
+    padding: 10px;
+    border-radius: 70px;
+    width: 200px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#filter_fur,
+#filter_child,
+#filter_age {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 70px;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#search_input {
+    width: 70%;
+    padding: 5px;
+    border: none;
+    border-radius: 70px;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.search_container_1,
+.search_container_2 {
+    display: flex;
+    align-items: center;
+    background-color: #DEEED5;
+    padding: 10px;
+    border-radius: 70px;
+    width: 245px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.button_learn_more {
+    margin-top: 15px;
+    color: #352300;
+    text-align: center;
+    font-family: Spectral SC;
+    font-size: 18px;
+    font-weight: 600;
+    width: 190px;
+    height: 47px;
+    border: none;
+    border-radius: 70px;
+    background: #84AE7D;
+}
+
+.breed_dog_details {
+    color: #000;
+    text-align: left;
+    font-family: 'Spectral SC', serif;
+    font-size: 18px;
+    padding-top: 5px;
+}
+
+.name_dog_details {
+    color: #000;
+    text-align: center;
+    font-family: 'Spectral SC', serif;
+    font-size: 25px;
+    font-weight: 600;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.label {
+    font-family: 'Spectral SC', serif;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.breed_dog_details .value {
+    font-family: 'Spectral SC', serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.value {
+    font-family: 'Spectral SC', sans-serif;
+}
+
+.photo_dog_details {
+    width: 90%;
+    height: 190px;
+    border-radius: 1rem;
+    color: #505050;
+    border: solid;
+}
+
+.container_dog_details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    padding-top: 40px;
+    border: solid;
+}
+
+.search_dogs_owner_name,
+.search_dogs_name {
+    max-width: 100%;
+    height: auto;
+    width: 30px;
+    height: 30px;
+    padding-left: 20px;
+}
+
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.work-section-info {
+    width: 290px;
+    height: 470px;
+    min-height: 350px;
+    background-color: #CADBB7;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 1rem;
+    color: #505050;
+    margin: 1rem 2rem;
+    border: solid;
+}
+
+.menu, .checkbox, .menuToggle, .navigation{
+    display: none;
+
+}
+
+@media (max-width: 768px) {
+    .name_of_breed_header {
+        font-size: 35px;
+        font-weight: 240;
+        margin-left: 80px;
+        transform: translateY(30px);
+    }
+
+    .bi-person-circle::before {
+        transform: translateX(30px);
+    }
+
+    .filters_dogs {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 15px;
+    }
+
+    .filters_dogs.show {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background-color: #0f150e;
+        border-radius: 50%;
+        cursor: pointer;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
+
+    .burger-menu div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .burger-menu.open div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger-menu.open div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.open div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+
+
+
+    #menuToggle {
+        display: block;
+        position: relative;
+        top: 50px;
+        left: 50px;
+        cursor: pointer;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+
+        z-index: 1;
+
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    #menuToggle a {
+        text-decoration: none;
+        color: #232323;
+
+        
+
+        transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover {
+        color: tomato;
+    }
+
+
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+
+        cursor: pointer;
+
+        opacity: 0;
+        z-index: 2;
+        -webkit-touch-callout: none;
+    }
+
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+
+        background: #cdcdcd;
+        border-radius: 3px;
+
+        z-index: 1;
+
+        transform-origin: 4px 0px;
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+    #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323;
+    }
+
+    #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+
+    #menu {
+        position: absolute;
+        width: 600px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+
+        background: #ededed;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        /* to stop flickering of text in safari */
+
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    #menu li {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+
+    #menuToggle input:checked~ul {
+        transform: none;
+    }
+
+}
