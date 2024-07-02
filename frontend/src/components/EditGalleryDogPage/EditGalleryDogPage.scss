@@ -1,0 +1,99 @@
+.edit_gallery_dog_page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit_gallery_dog_page_content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 1200px;
+    max-width: 90%;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+}
+
+.photo_edit_container {
+    margin-top: 50px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.photo_edit {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    margin-right: 10px;
+    display: flex;
+    border: 1px solid #505050;
+    border-radius: 10px;
+}
+
+.photo_input {
+    flex-grow: 1;
+}
+
+.photos_container {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+}
+
+.save_button,
+.close_button {
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 70px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 600px;
+}
+
+.delete_btn{
+    background-color: #758664;
+    border-radius: 70px;
+    border: none;
+    width: 180px;
+    height: 50px;
+    margin-top: 40px;
+}
+
+.close_icon {
+    font-size: 30px; 
+    position: absolute;
+    top: 40px;
+    right: 160px;
+    cursor: pointer;
+}
+
+.btn_container{
+    display: flex;
+}
+.add_photo_input {
+    display: none;
+}
+
+.custom_file_input_label {
+    margin-top: 20px;
+    margin-right: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f0f0f0; /* Adjust the background color */
+    border: 1px solid #ccc; /* Adjust the border */
+    border-radius: 5px; /* Adjust the border radius */
+    display: inline-block;
+    width: 600px;
+}
+
+.custom_file_input_label:hover {
+    background-color: #e0e0e0; /* Adjust the hover background color */
+}

@@ -1,57 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import Dog from "./DogModel";
 import "./Tree.css";
-import AddPicture from "../../images/add_picture.png"
+import DogTreeElement from "../GlobalComponents/DogTreeElement";
+import { useNavigate, useParams } from "react-router-dom";
+import axios from 'axios';
+import { date } from "yup";
 
 
-const Tree = ({ dog }) => {
-  const [currentDog, setCurrentDog] = useState(dog);
+const Tree = () => {
 
-  const addParent = (parentType, name) => {
-    const newParent = new Dog(name);
-    const updatedDog = { ...currentDog };
-    updatedDog.parents[parentType] = newParent;
-    setCurrentDog(updatedDog);
-  };
+  const {userId} = useParams();
+  const navigate = useNavigate();
 
-  const renderDog = (dog, depth = 0) => {
-    if (!dog) return null;
+  const [dog, setDog] = useState(new Dog("Lucky", "Rosa", "John","Pyshunka",  "Jula","Bobik", "Kokosik"));
+
+  useEffect(() => {
+    const fetchData = async () => { 
+        try {
+            const response = await axios.get(`https://wq9h4qjf-5254.euw.devtunnels.ms/api/DogDetails/dog-with-parents/${userId}`); 
+            console.log('Response:', response);
+            const dogData = response.data
+            setDog(prevState => ({...prevState, father:dogData.father, mother:dogData.mother.name}))
+            
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+    fetchData(); 
+}, [userId, navigate]);
+
 
     return (
       <div className="Tree">
-        <div className="TreeObject">Name: {dog.name} <img src={AddPicture}/></div>
-        <div className="ObjectPair">
-          <div>
-          
-          Father:{" "}
-            {dog.parents.father ? dog.parents.father.name : "Add Father"}
-          <div
-            className="TreeObject"
-            onClick={() => addParent("father", prompt("Father's name"))}
-          >
-            <img className="" src={AddPicture}/>
+        <div className="Parents">
+          <div className="TreeElement">
+            <DogTreeElement name="Батько" dog={dog.father} ></DogTreeElement>
           </div>
-          </div>
-          
-          <div>
-          Mother:{" "}
-              {dog.parents.mother ? dog.parents.mother.name : "Add Mother"}
-            <div
-              className="TreeObject"
-              onClick={() => addParent("mother", prompt("Mother's name"))}
-            >
-              <img src={AddPicture}/>
-            </div>
+          <div className="TreeElement">
+            <DogTreeElement name="Матір" dog={dog.mother}></DogTreeElement>
           </div>
         </div>
-
-        {renderDog(dog.parents.father, depth + 1)}
-        {renderDog(dog.parents.mother, depth + 1)}
+        <div className="Ancestors">
+          <div className="TreeElement">
+            <DogTreeElement name="Бабуся" dog={dog.grandmaMa}></DogTreeElement>
+            <DogTreeElement name="Дідусь" dog={dog.grandmaFa}></DogTreeElement>
+          </div>
+          <div className="TreeElement">
+            <DogTreeElement name="Бабуся" dog={dog.grandadMa}></DogTreeElement>
+            <DogTreeElement name="Дідусь" dog={dog.grandadFa}></DogTreeElement>
+          </div>
+        </div>
       </div>
     );
   };
 
-  return <div>{renderDog(currentDog)}</div>;
-};
 
 export default Tree;

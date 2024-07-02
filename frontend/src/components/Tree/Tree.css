@@ -1,24 +1,22 @@
 .Tree {
-    height: 1000px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     background-color: #C1CEB4;
-}
+    padding: 10px;
+    height: 600px;
+    white-space: nowrap;
 
-.TreeObject {
-    width: 200px;
-    height: 200px;
-    background-color: #BBD7A2;
-    border: 3px;
-    border-color: #483636;
-    border-radius: 50px;
-    align-self: center;
-}
-
-.ObjectPair{
+  }
+  
+  .TreeElement{
+    width: 50%;
+    height: min-content;
     display: flex;
-    justify-content: space-around;
-
+    justify-content: center;
+    gap: 20px;
+  }
+  .Parents{
+    display: flex;
     
-}
+  }
+  .Ancestors {
+    display: flex;
+  }

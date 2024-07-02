@@ -29,4 +29,31 @@ ul.nav_ul {
     margin: 0;
 }
 
+.nav_ul li a {
+    text-decoration: none; /* Прибрати підкреслення */
+    color: #000; /* Змініть колір тексту за необхідністю */
+    font-family: Zen Old Mincho;
+    font-size: 24px;
+    font-weight: 400;
+    justify-content: space-around;}
 
+// .nav_ul li a:hover {
+//     color: #829D71; /* Додайте ефект при наведенні, якщо бажано */
+// }
+
+.nav_ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav_ul li {
+    display: inline;
+}
+
+
+@media (max-width: 768px) {
+}

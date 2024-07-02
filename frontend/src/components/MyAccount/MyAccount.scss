@@ -17,6 +17,7 @@
   border-radius: 50px;
   background: #84ae7d;
   justify-self: flex-start;
+  margin-left: 30px;
 }
 
 .button_account_text {
@@ -32,6 +33,7 @@
   width: 30px;
 }
 
+
 .my_account_header {
   color: #000;
   text-align: center;
@@ -45,6 +47,7 @@
 .account_info {
   text-align: left;
   margin: 10px 0px 10px 0px;
+  transform: translateX(90px)
 }
 
 .button_edit_account {
@@ -59,11 +62,25 @@
   background: #84ae7d;
 }
 
+.button-edit-edit-data-user {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 70px;
+  background: #84ae7d;
+  transform: translateX(-65px) translateY(-70px);
+
+
+}
+
 .button_edit_text {
   color: #000;
   text-align: center;
   font-family: Spectral SC;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 300;
   margin: auto;
 }
@@ -151,27 +168,131 @@
   z-index: -1;
   margin: 30px auto;
 }
+
 .account_photo {
-  height: 350px;
+  height: 400px;
   margin-left: 20px;
+  border-radius: 1rem;
+  color: #505050;
+  margin: 1rem 2rem;
+  border: solid;
 }
 
-.my_dogs_container{
+.user_container {
+  display: flex;
+  margin-left: 30px;
+}
+
+.my_dogs_container {
   border-radius: 30px;
   width: 95%;
-  height: 300px;
+  height: auto;
+  /* Зміна висоти на автоматичну */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  /* Вирівнювання зверху */
   background-color: #eaf7dd;
   margin: 30px auto;
   gap: 40px;
-  
+  flex-wrap: wrap;
+  /* Додано для переносу елементів на новий рядок */
+  overflow: auto;
+  /* Дозволяє прокручування */
 }
 
-.dog_card{
-  width: 270px;
-  height: 250px;
-  background-color: #829d71;
+.work-section-info-dog {
+
+  background-color: #A5C585;
   border-radius: 30px;
+  width: 270px;
+  height: 420px;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  font-family: 'Source Serif Pro';
+  font-size: 16px;
+  font-weight: bold;
+  flex: 0 0 auto;
+  margin-right: 10px;
+  border-radius: 1rem;
+  color: #505050;
+  margin: 1rem 2rem;
+  border: solid;
+}
+
+.photo_dog_details {
+  border-radius: 20px;
+}
+
+.button_learn_more-dog {
+  margin-top: 15px;
+  color: #352300;
+  text-align: center;
+  font-family: Spectral SC;
+  font-size: 20px;
+  font-weight: 600;
+  width: 210px;
+  height: 47px;
+  border: none;
+  border-radius: 70px;
+  background: #829D71;
+  display: flex;
+  margin-left: 40px;
+}
+
+.button_edit_text-dog {
+  color: #000;
+  text-align: center;
+  font-family: Spectral SC;
+  font-size: 24px;
+  font-weight: 300;
+  margin: auto;
+}
+
+.breed_dog_detail {
+  color: #000;
+  text-align: center;
+  font-family: Spectral SC;
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 5px;
+
+}
+
+@media (max-width: 768px) {
+  .my_account_header {
+    font-size: 30px;
+    font-weight: 200;
+    margin-left: 20px;
+  }
+
+  .account_header {
+    gap: 10%;
+
+  }
+
+  .button_account {
+    width: 180px;
+    height: 50px;
+  }
+
+  .account_photo {
+    height: 250px;
+    margin-left: 0px;
+  }
+
+  .account_info {
+    transform: translateX(0px)
+  }
+
+  .button-edit-edit-data-user {
+    transform: translateX(-15px) translateY(10px);
+
+  }
+
+  .button_relatives{
+    width: 45%;
+  height: 50px;
+  }
 }

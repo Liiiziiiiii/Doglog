@@ -1,0 +1,174 @@
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import go_back from "../../images/go_back.png";
+import add_photo_icon from "../../images/add_photo_icon.png";
+import { FaRegCopy } from "react-icons/fa6";
+import Header from '../Header/Header';
+import OwnerDogPage from '../OwnerDogPage/OwnerDogPage';
+import GalleryDogPage from '../GalleryDogPage/GalleryDogPage';
+import PuppiesDogPage from '../PuppiesDogPage/PuppiesDogPage';
+
+const DogProfileView = () => {
+    const { dogId } = useParams();
+    const [datadog, setDogData] = useState(null);
+    const [url, setUrl] = useState('');
+    const [activePage, setActivePage] = useState(''); 
+    const [showOwnerPage, setShowOwnerPage] = useState(false);
+    const [showAlbumPage, setShowAlbumPage] = useState(false);
+    const [showPuppiesPage, setShowPuppiesPage] = useState(false);
+
+    useEffect(() => {
+        setUrl(window.location.href);
+    }, []);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/Dog/${dogId}`);
+                console.log('Response:', response.data);
+                console.log("dogId - ", dogId);
+
+                setDogData(response.data);
+            } catch (error) {
+                console.error('Error:', error);
+                console.log("dogId - ", dogId);
+            }
+        };
+
+        fetchData();
+    }, [dogId]);
+
+    function copyLink() {
+        var linkOutput = document.getElementById("urlInput");
+
+        if (url) {
+            linkOutput.value = url.trim();
+            linkOutput.select();
+            document.execCommand("copy");
+            alert("Посилання скопійовано!");
+        } else {
+            alert("Будь ласка, зачекайте, поки URL-адреса не буде завантажена.");
+        }
+    }
+
+    const handleShowOwnerPage = () => {
+        setActivePage('owner');
+        setShowOwnerPage(true);
+        setShowAlbumPage(false);
+        setShowPuppiesPage(false);
+    };
+
+    const handleShowAlbumPage = () => {
+        setActivePage('album');
+        setShowAlbumPage(true);
+        setShowOwnerPage(false);
+        setShowPuppiesPage(false);
+    };
+
+    const handleShowPuppiesPage = () => {
+        setActivePage('puppies');
+        setShowPuppiesPage(true);
+        setShowAlbumPage(false);
+        setShowOwnerPage(false);
+    };
+
+    return (
+        <div className="dog_page">
+            <Header />
+
+            <div className='dog-page-container'>
+                <button className='dog-page-back-button'>
+                    <img className='go_back_img' src={go_back} alt='go back img' />
+                    <span className='button_return_text'>Повернутись</span>
+                </button>
+                <div className='dog-page-url-section'>
+                    <input
+                        type="text"
+                        id="urlInput"
+                        placeholder="URL-адреса"
+                        value={url}
+                        readOnly
+                        className='dog-page-url-input'
+                    />
+                    <FaRegCopy className='icon-copy' onClick={copyLink} />
+                </div>
+            </div>
+
+            <div className='main_dog_container_container background_rectangle_dog_page'>
+                {datadog ? (
+                    <>
+                        <div className='dog_info_container'>
+                            <div className="image_dog_page">
+                                <img className='photo_dog_page' src={datadog.photo || add_photo_icon} alt="photo_dog_page" />
+                            </div>
+                            <div className='dog_page_fields'>
+                                <div className='dog_field_name'>
+                                    <span className='name_dog'>{datadog.name}</span>
+                                </div>
+                                <div className='dog_field'>
+                                    <label className='text_dog_detail'>Порода:</label>
+                                    <span className='text_dog_detail'>{datadog.breed}</span>
+                                </div>
+                                <div className='dog_field'>
+                                    <label className='text_dog_detail'>Вік:</label>
+                                    <span className='text_dog_detail'>{datadog.age}</span>
+                                </div>
+                                <div className='dog_field'>
+                                    <label className='text_dog_detail'>Стать:</label>
+                                    <span className='text_dog_detail'>{datadog.sex}</span>
+                                </div>
+                                <div className='dog_field'>
+                                    <label className='text_dog_detail'>Шерсть:</label>
+                                    <span className='text_dog_detail'>{datadog.wool}</span>
+                                </div>
+                                <div className='dog_field'>
+                                    <label className='text_dog_detail'>Ріст:</label>
+                                    <span className='text_dog_detail'>{datadog.growth}</span>
+                                </div>
+                                <div className='dog_field'>
+                                    <label className="text_dog_detail">Вага:</label>
+                                    <span className='text_dog_detail'>{datadog.weight}</span>
+                                </div>
+                                <div className='dog_field'>
+                                    <label className="text_dog_detail">КСУ:</label>
+                                    <span className='text_dog_detail'>{datadog.ksy}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                ) : (
+                    <p>Loading...</p>
+                )}
+            </div>
+
+            <div className='dog_page_buttons'>
+                <button className={`dog_page_details_button ${activePage === 'pedigree' ? 'active' : ''}`}>Родослівна</button>
+                <button className={`dog_page_details_button ${activePage === 'puppies' ? 'active' : ''}`} onClick={handleShowPuppiesPage}>Цуценята</button>
+                <button className={`dog_page_details_button ${activePage === 'album' ? 'active' : ''}`} onClick={handleShowAlbumPage}>Галерея</button>
+                <button className={`dog_page_details_button ${activePage === 'owner' ? 'active' : ''}`} onClick={handleShowOwnerPage}>Власник</button>
+            </div>
+
+            {showOwnerPage && (
+                <div className='owner_info_section'>
+                    <OwnerDogPage dogId={dogId} />
+                </div>
+            )}
+
+            {showAlbumPage && (
+                <div className='owner_info_section'>
+                    <GalleryDogPage dogId={dogId} />
+                </div>
+            )}
+
+            {showPuppiesPage && (
+                <div className='owner_info_section'>
+                    <PuppiesDogPage dogId={dogId} />
+                </div>
+            )}
+
+        </div>
+    );
+};
+
+export default DogProfileView;

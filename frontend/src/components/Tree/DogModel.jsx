@@ -1,7 +1,13 @@
 class Dog {
-    constructor(name, parents = { father: null, mother: null }) {
+    constructor(name, mother, father, grandmaMa, grandadMa,grandmaFa, grandadFa) {
       this.name = name;
-      this.parents = parents;
+      this.mother = mother;
+      this.father = father;
+      this.grandmaMa = grandmaMa
+      this.grandadMa = grandadMa
+      this.grandmaFa = grandmaFa
+      this.grandadFa = grandadFa
+      
     }
   }
 

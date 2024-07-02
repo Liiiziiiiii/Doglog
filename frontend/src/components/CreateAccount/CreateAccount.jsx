@@ -32,7 +32,7 @@ const CreateAccount = () => {
         }),
         onSubmit: async (values) => {
             try {
-                const response = await axios.post('http://localhost:5254/api/RegistarationUsers/register', values);
+                const response = await axios.post('http://localhost:5254/api/Auth/register', values);
                 console.log('Response:', response);
                 if(response.status === 201){
                     navigate("/");

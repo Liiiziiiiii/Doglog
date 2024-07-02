@@ -1,0 +1,63 @@
+.edit-user-data-section {
+    width: 60%;
+    height: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #C1CEB4;
+    color: black;
+    text-align: center;
+}
+
+.edit-user-data-main-section {
+    display: flex;
+    margin-left: 50px;
+
+}
+
+.formik-form {
+    margin-left: 100px;
+}
+
+.image-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.account_photo_edit-data {
+    height: 320px;
+    margin-left: 20px;
+    border-radius: 1rem;
+    color: #505050;
+    margin: 1rem 2rem;
+    border: solid;
+}
+
+.image-upload-label {
+    cursor: pointer;
+}
+
+.add-icon-frame {
+    width: 100px;
+    /* Adjust size as needed */
+    height: 100px;
+    /* Adjust size as needed */
+    border: 2px dashed #e00f0f;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-icon {
+    width: 50px;
+    /* Adjust size as needed */
+    height: 50px;
+    /* Adjust size as needed */
+    color: #ccc;
+    /* Adjust color as needed */
+}
