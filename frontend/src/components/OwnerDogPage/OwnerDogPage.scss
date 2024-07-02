@@ -1,0 +1,29 @@
+.owner_account_details {
+    display: flex;
+    align-items: center;
+    gap: 20%;
+    color: #000;
+    text-align: center;
+    font-family: Source Serif Pro;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    border: 1px solid #505050;
+
+}
+
+.user_account_info {
+    text-align: left;
+    margin: 10px 0px 10px 0px;
+    transform: translateX(-120px)
+}
+
+.detail_account_photo {
+    height: 350px;
+    margin-left: 20px;
+    border-radius: 1rem;
+    color: #505050;
+    margin: 1rem 2rem;
+    border: solid;
+    transform: translateX(80px)
+}

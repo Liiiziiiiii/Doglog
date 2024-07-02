@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.scss';
 import logo from "../../images/logo.png";
 
 const Header = () => {
+    const [userId, setUserId] = useState(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const storedUserId = localStorage.getItem('UserId');
+        setUserId(storedUserId);
+    }, []);
+
+    const handleMyAccountClick = () => {
+        if (userId) {
+            navigate(`/myaccount/${userId}`);
+        } //else {
+        //     navigate('/login'); 
+        // }
+    };
+
     return (
         <div className='header'>
             <nav>
@@ -10,8 +27,12 @@ const Header = () => {
                     <li>
                         <img className='logoNav' src={logo} alt='логотип' />
                     </li>
-                    <li>Головна</li>
-                    <li>Мій акаунт</li>
+                    <li>
+                        <Link to="/">Головна</Link>
+                    </li>
+                    <li>
+                        <a onClick={handleMyAccountClick} style={{ cursor: 'pointer' }}>Мій акаунт</a>
+                    </li>
                     <li>Налаштування</li>
                     <li>Про нас</li>
                 </ul>
