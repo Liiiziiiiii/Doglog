@@ -8,8 +8,7 @@ import { date } from "yup";
 
 
 const Tree = () => {
-
-  const {userId} = useParams();
+  const {dogId} = useParams();
   const navigate = useNavigate();
 
   const [dog, setDog] = useState(new Dog("Lucky", "Rosa", "John","Pyshunka",  "Jula","Bobik", "Kokosik"));
@@ -17,7 +16,7 @@ const Tree = () => {
   useEffect(() => {
     const fetchData = async () => { 
         try {
-            const response = await axios.get(`https://wq9h4qjf-5254.euw.devtunnels.ms/api/DogDetails/dog-with-parents/${userId}`); 
+            const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/Dog/${dogId}`); 
             console.log('Response:', response);
             const dogData = response.data
             setDog(prevState => ({...prevState, father:dogData.father, mother:dogData.mother.name}))
@@ -28,7 +27,7 @@ const Tree = () => {
     };
 
     fetchData(); 
-}, [userId, navigate]);
+}, [dogId, navigate]);
 
 
     return (

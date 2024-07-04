@@ -5,11 +5,10 @@ import { CreateAccount } from './components/CreateAccount';
 import LogIn from './components/LogIn/LogIn';
 import MyAccount from './components/MyAccount/MyAccount';
 import AddDog from './components/AddDog/AddDog';
-import TreeProvider from './components/Tree/TreeProvider';
+import Tree from './components/Tree/Tree';
 import ListDogs from './components/ListDogs/ListDogs';
 import ListNameDogs from './components/ListNameDogs/ListNameDogs';
 import EditUserData from './components/EditUserData/EditUserData';
-import PrivateRoutes from './components/PrivateRoutes';
 import DogPage from './components/DogPage/DogPage';
 import OwnerDogPage from './components/OwnerDogPage/OwnerDogPage';
 import DogProfileView from './components/DogProfileView/DogProfileView';
@@ -17,14 +16,13 @@ import DogProfileView from './components/DogProfileView/DogProfileView';
 function App() {
   return (
     <div className="App">
+      <Router>
         <Routes>
-          <Route element={<PrivateRoutes />}>
-            <Route exact path="/myaccount/:userId" element={<MyAccount />} />
-            <Route exact path="/addDog" element={<AddDog />} />
-            <Route exact path="/tree" element={<TreeProvider />} />
-            <Route exact path="/list-dog" element={<ListDogs />} />
-            <Route exact path="/list-name-dog" element={<ListNameDogs />} />
-          </Route>
+          <Route exact path="/myaccount/:userId" element={<MyAccount />} />
+          <Route exact path="/addDog" element={<AddDog />} />
+          <Route exact path="/tree/:dogId" element={<Tree />} />
+          <Route exact path="/list-dog" element={<ListDogs />} />
+          <Route exact path="/list-name-dog" element={<ListNameDogs />} />
           <Route exact path="/login" element={<LogIn />} />
           <Route exact path="/register" element={<CreateAccount />} />
           <Route path="/" element={<ListNameDogs />} />
@@ -33,8 +31,8 @@ function App() {
           <Route exact path="/dogpage/:dogId" element={<DogPage />} />
           <Route exact path="/ownerdogpage" element={<OwnerDogPage />} />
           <Route exact path="/dogpageview/:dogId" element={<DogProfileView />} />
-
         </Routes>
+        </Router>
     </div>
   );
 }
