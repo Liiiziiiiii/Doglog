@@ -30,7 +30,7 @@ const ListDogs = () => {
 
             try {
                 const response = await axios.get(url);
-                console.log("Response data: ", response.data);  // Log the data
+                console.log("Response data: ", response.data);  
 
                 setOriginalUserData(response.data);
                 setFilteredUserData(response.data);

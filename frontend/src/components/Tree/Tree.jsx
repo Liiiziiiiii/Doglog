@@ -19,7 +19,7 @@ const Tree = () => {
             const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/Dog/${dogId}`); 
             console.log('Response:', response);
             const dogData = response.data
-            setDog(prevState => ({...prevState, father:dogData.father, mother:dogData.mother.name}))
+            setDog(prevState => ({...prevState, father:dogData.father, mother:dogData.mother}))
             
         } catch (error) {
             console.error('Error:', error);
@@ -32,6 +32,7 @@ const Tree = () => {
 
     return (
       <div className="Tree">
+
         <div className="Parents">
           <div className="TreeElement">
             <DogTreeElement name="Батько" dog={dog.father} ></DogTreeElement>

@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import OwnerDogPage from '../OwnerDogPage/OwnerDogPage';
 import GalleryDogPage from '../GalleryDogPage/GalleryDogPage';
 import PuppiesDogPage from '../PuppiesDogPage/PuppiesDogPage';
+import Tree from '../Tree/Tree';
 import edit_img from "../../images/edit_account.png";
 
 
@@ -20,6 +21,9 @@ const DogPage = () => {
     const [showOwnerPage, setShowOwnerPage] = useState(false);
     const [showAlbumPage, setShowAlbumPage] = useState(false);
     const [showPuppiesPage, setShowPuppiesPage] = useState(false);
+    const [showTree, setShowTree] = useState(true);
+
+
 
     useEffect(() => {
         setUrl(window.location.href);
@@ -52,11 +56,20 @@ const DogPage = () => {
         }
     }
 
+    const handleShowTree= () => {
+        setActivePage('tree');
+        setShowTree(true);
+        setShowPuppiesPage(false);
+        setShowAlbumPage(false);
+        setShowOwnerPage(false);
+    };
+
     const handleShowOwnerPage = () => {
         setActivePage('owner');
         setShowOwnerPage(true);
         setShowAlbumPage(false);
         setShowPuppiesPage(false);
+        setShowTree(false);
     };
 
     const handleShowAlbumPage = () => {
@@ -64,6 +77,8 @@ const DogPage = () => {
         setShowAlbumPage(true);
         setShowOwnerPage(false);
         setShowPuppiesPage(false);
+        setShowTree(false);
+
     };
 
     const handleShowPuppiesPage = () => {
@@ -71,6 +86,12 @@ const DogPage = () => {
         setShowPuppiesPage(true);
         setShowAlbumPage(false);
         setShowOwnerPage(false);
+        setShowTree(false);
+
+    };
+
+    const handleGoBack = () => {
+        navigate(-1);
     };
 
     return (
@@ -79,7 +100,7 @@ const DogPage = () => {
 
             <div className='dog-page-container'>
                 <button className='dog-page-back-button'>
-                    <img className='go_back_img' src={go_back} alt='go back img' />
+                    <img className='go_back_img' src={go_back} onClick={handleGoBack} alt='go back img' />
                     <span className='button_return_text'>Повернутись</span>
                 </button>
                 <div className='dog-page-url-section'>
@@ -150,11 +171,17 @@ const DogPage = () => {
             </div>
 
             <div className='dog_page_buttons'>
-                <button className={`dog_page_details_button ${activePage === 'pedigree' ? 'active' : ''}`}>Родослівна</button>
+                <button className={`dog_page_details_button ${activePage === 'tree' ? 'active' : ''}`} onClick={handleShowTree}>Родослівна</button>
                 <button className={`dog_page_details_button ${activePage === 'puppies' ? 'active' : ''}`} onClick={handleShowPuppiesPage}>Цуценята</button>
                 <button className={`dog_page_details_button ${activePage === 'album' ? 'active' : ''}`} onClick={handleShowAlbumPage}>Галерея</button>
                 <button className={`dog_page_details_button ${activePage === 'owner' ? 'active' : ''}`} onClick={handleShowOwnerPage}>Власник</button>
             </div>
+
+            {showTree && (
+                <div className='owner_info_section'>
+                    <Tree dogId={dogId} />
+                </div>
+            )}
 
             {showOwnerPage && (
                 <div className='owner_info_section'>

@@ -27,8 +27,8 @@ const LogIn = () => {
                     console.log("Login successful", response.data);
 
                     localStorage.setItem("loggedIn", true);
-                    localStorage.setItem("token", response.data); // Assuming the response contains a token
-                    localStorage.setItem("UserId", response.data); // Assuming the response contains a token
+                    localStorage.setItem("token", response.data); 
+                    localStorage.setItem("UserId", response.data); 
 
                     navigate(`/myaccount/${response.data}`);
                 }
