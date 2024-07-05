@@ -1,6 +1,6 @@
 .form_dog {
     display: flex;
-    height: 700px;
+    height: 620px;
     width: 100%;
     margin: auto;
     align-items: center;
@@ -8,7 +8,7 @@
     background-color: #5F6F4E;
     border: 3px solid #724040;
     border-radius: 40px;
-    gap: 40px;
+    gap: 20px;
     flex-direction: row;
     
 
@@ -27,14 +27,14 @@
             -webkit-text-fill-color: black;
             -webkit-text-stroke-width: 0.5px;
             -webkit-text-stroke-color: rgb(255, 255, 255);
-            margin-right: 30px;
+
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: geometricPrecision;
         }
 
         input {
-            width: 250px;
+            width: 100px;
             border: 10px solid #DEEED5;
             border-radius: 70px;
             padding: 10px 15px;
@@ -43,18 +43,18 @@
 
         .basicInput{
             margin-top: 10px;
-            width: 400px;
+            width: 200px;
         }
 
         select {
-            width: 250px;
+            width: 170px;
             border: 10px solid #DEEED5;
             border-radius: 70px;
             padding: 10px 15px;
-            font-size: 16px;
+            font-size: 14px;
         }
         .wrapper{
-            width: 450px;
+            width: 250px;
             margin-top: 10px;
             background-color:#DEEED5;
             border-radius: 40px;
@@ -67,10 +67,11 @@
 }
 
 .modal_add_dog {
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
-    width: 90%;
-    margin: auto;
+    width: 100%;
 }
 
 .submit_button {
@@ -101,7 +102,7 @@
     color: #000;
     text-align: center;
     font-family: "Spectral SC";
-    font-size: 40px;
+    font-size: 28px;
     font-weight: 600;
     margin-bottom: 5px;
     font-weight: bold;
@@ -119,14 +120,14 @@
 }
 
 .add_photo_icon_dog {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
 }
 
 .photo_dog {
-    height: 500px;
-    width: 500px;
-    margin: 20px 40px 20px 40px;
-    border-radius: 70px;
+    height: 300px;
+    width: 300px;
+   
+    border-radius: 40px;
     background-color: #CBDCBB;
 }
