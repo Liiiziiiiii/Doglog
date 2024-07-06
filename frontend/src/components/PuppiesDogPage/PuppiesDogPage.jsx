@@ -22,12 +22,12 @@ const PuppiesDogPage = ({ dogId }) => {
     return (
         <div>
             {dogData ? (
-                <div className='my_dogs_container'>
+                <div className='my_dogs_container' >
                     <div className="items-container">
                         {dogData.puppies && dogData.puppies.length > 0 ? (
                             <div className="puppies-container">
                                 {dogData.puppies.map((puppy, idx) => (
-                                    <div key={`puppy-${idx}`} className="work-section-info-dog">
+                                    <div key={`puppy-${idx}`} className="work-section-info-puppies">
                                         <img className='photo_dog_details' src={puppy.photo} alt='Puppy Photo' />
                                         <div className='details_dogs'>
                                             <div className='name_dog_details'>{puppy.name}</div>

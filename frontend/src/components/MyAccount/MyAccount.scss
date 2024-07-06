@@ -187,18 +187,14 @@
   border-radius: 30px;
   width: 95%;
   height: auto;
-  /* Зміна висоти на автоматичну */
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* Вирівнювання зверху */
   background-color: #eaf7dd;
   margin: 30px auto;
   gap: 40px;
   flex-wrap: wrap;
-  /* Додано для переносу елементів на новий рядок */
   overflow: auto;
-  /* Дозволяє прокручування */
 }
 
 .work-section-info-dog {
@@ -295,4 +291,13 @@
     width: 45%;
   height: 50px;
   }
+}
+
+.add-dog-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1c0d0d;
+  font-size: 18px;
+  text-align: center;
 }

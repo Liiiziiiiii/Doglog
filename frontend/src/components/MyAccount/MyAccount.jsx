@@ -7,6 +7,7 @@ import account_photo from "../../images/account_photo.png";
 import edit_img from "../../images/edit_account.png";
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import { FaPlus } from "react-icons/fa";
 
 const MyAccount = () => {
     const { userId } = useParams();
@@ -47,7 +48,7 @@ const MyAccount = () => {
             <Header />
             <div className='account_header'>
                 <button className='button_account' onClick={handleGoBack}>
-                    <img className='go_back_img' src={go_back} alt='go back img' />
+                    <img className='go_back_img' src={go_back} onClick={handleGoBack} alt='go back img' />
                     <span className='button_account_text'>Повернутись</span>
                 </button>
                 <h2 className='my_account_header'>МІЙ АКАУНТ</h2>
@@ -83,14 +84,16 @@ const MyAccount = () => {
                     <button className='button_relatives'>
                         Мої собаки
                     </button>
-                    <button className='button_relatives'>
-                        Родичі моїх собак
-                    </button>
                 </div>
             </div>
             {userData && userData.dogs && (
                 <div className='my_dogs_container'>
+
                     <div className="items-container">
+                        <div className="work-section-info-dog add-dog-button" onClick={() => navigate('/addDog')}>
+                            <FaPlus size={24} />
+                            <span>Додати собаку</span>
+                        </div>
                         {userData.dogs.map((dog, idx) => (
                             <div key={`dog-${idx}`} className="work-section-info-dog">
                                 <img className='photo_dog_details' src={dog.photo || account_photo} alt='Photo dog' />
