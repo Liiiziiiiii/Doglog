@@ -4,9 +4,10 @@ import add_photo_icon from "../../images/add_photo_icon.png"
 import Header from '../Header/Header';
 import FooterReg from '../Footer/Footer';
 import axios from 'axios';
+import AddDogTreeElement from '../GlobalComponents/AddTreeDogElement/AddTreeDogElement';
 
 
-const AddDog = ({ closeModal, onAddDog, dog }) => {
+const AddDog = ({ dog }) => {
     const [formData, setFormData] = useState({
         name: '',
         breed: '',
@@ -22,7 +23,13 @@ const AddDog = ({ closeModal, onAddDog, dog }) => {
         photo: "",
         userId: 0,
         mother_Id: 0,
-        father_Id: 0
+        father_Id: 0,
+        mother:{
+            name:""
+        },
+        father:{
+            name:""
+        }
     });
 
     useEffect(() => {
@@ -38,6 +45,10 @@ const AddDog = ({ closeModal, onAddDog, dog }) => {
             [name]: value,
         }));
     };
+
+    const handleUpdate = (updateObj)=>{
+        setFormData(updateObj)
+    }
 
     async function handleSubmit (e) {
         e.preventDefault();
@@ -106,11 +117,35 @@ const AddDog = ({ closeModal, onAddDog, dog }) => {
                             <label className="number_dog">Чіп:</label>
                             <input type="number" id="number_dog" name="chip" placeholder="Введіть номер чипу (необов'язково)" value={formData.chip} onChange={handleChange} min="0" />
                         </div>
-                        <button className='submit_button'>Save</button>
                     </div>
                 </div>
             </form>
         </div>
+
+
+        <div className="Tree">
+        <div className="Parents">
+          <div className="TreeElement">
+            <AddDogTreeElement name="Батько"  obj={formData.father} onUpdate={handleUpdate}></AddDogTreeElement>
+          </div>
+          <div className="TreeElement">
+            <AddDogTreeElement name="Матір"  obj={formData.mother} onUpdate={handleUpdate}></AddDogTreeElement>
+            
+          </div>
+        </div>
+        <div className="Ancestors">
+          <div className="TreeElement">
+            <AddDogTreeElement name="Бабуся"  obj={formData} onUpdate={handleUpdate}></AddDogTreeElement>
+            <AddDogTreeElement name="Дідусь"  obj={formData} onUpdate={handleUpdate}></AddDogTreeElement>
+          </div>
+          <div className="TreeElement">
+            <AddDogTreeElement name="Бабуся" obj={formData} onUpdate={handleUpdate}></AddDogTreeElement>
+            <AddDogTreeElement name="Дідусь"  obj={formData} onUpdate={handleUpdate}></AddDogTreeElement>
+          </div>
+        </div>
+        <button className='submit_button' onClick={handleSubmit}>Save</button>
+      </div>
+
         <FooterReg></FooterReg>
         </>
     );

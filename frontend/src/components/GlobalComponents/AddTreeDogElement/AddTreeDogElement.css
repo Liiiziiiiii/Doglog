@@ -1,0 +1,40 @@
+
+.DogElement{
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .AddPicture {
+    width: 250px;
+    height: 180px;
+    background-color: #BBD7A2;
+    border: 3px solid #483636;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .AddPictureLogo {
+    width: 70px;
+    height: 70px;
+  }
+
+.Input{
+    background: none;
+    border: 0px;
+    outline: #BBD7A2;
+    place-content: center;
+    text-align: center;
+    font-size: 18px;
+}
+
+.IdInput{
+    background-color: #BBD7A2;
+    border: solid 1px ;
+    border-radius: 6px;
+}
