@@ -131,3 +131,26 @@
     border-radius: 40px;
     background-color: #CBDCBB;
 }
+
+.Tree {
+    background-color: #C1CEB4;
+    padding: 10px;
+    height: 600px;
+    white-space: nowrap;
+
+  }
+  
+  .TreeElement{
+    width: 50%;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .Parents{
+    display: flex;
+    
+  }
+  .Ancestors {
+    display: flex;
+  }

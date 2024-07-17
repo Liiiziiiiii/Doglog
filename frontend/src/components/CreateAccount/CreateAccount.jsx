@@ -32,7 +32,7 @@ const CreateAccount = () => {
         }),
         onSubmit: async (values) => {
             try {
-                const response = await axios.post('http://localhost:5254/api/Auth/register', values);
+                const response = await axios.post('http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/Auth/register', values);
                 console.log('Response:', response);
                 if(response.status === 201){
                     navigate("/");
