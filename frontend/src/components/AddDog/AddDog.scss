@@ -1,16 +1,16 @@
 .form_dog {
     display: flex;
-    height: 620px;
-    width: 100%;
+    height: 420px;
+    width: 1440px;
     margin: auto;
     align-items: center;
     justify-content: center;
-    background-color: #5F6F4E;
-    border: 3px solid #724040;
+    background-color: #90A47A;
+    //border: 3px solid #ba9696;
     border-radius: 40px;
     gap: 20px;
     flex-direction: row;
-    
+
 
     .image_dog {
         input {
@@ -19,14 +19,14 @@
     }
 
     .form_fields {
-        margin: 20px 40px 20px 40px;
+        margin: 20px 40px 20px 10px;
 
         label {
-            font-weight: bold;
+            //font-weight: bold;
             font-family: "Spectral SC";
             -webkit-text-fill-color: black;
             -webkit-text-stroke-width: 0.5px;
-            -webkit-text-stroke-color: rgb(255, 255, 255);
+           // -webkit-text-stroke-color: rgb(255, 255, 255);
 
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -34,34 +34,55 @@
         }
 
         input {
-            width: 100px;
+            width: 150px;
             border: 10px solid #DEEED5;
             border-radius: 70px;
             padding: 10px 15px;
             font-size: 16px;
         }
 
-        .basicInput{
+        .basicInput {
             margin-top: 10px;
-            width: 200px;
+            width: 230px;
         }
 
         select {
-            width: 170px;
+            width: 190px;
             border: 10px solid #DEEED5;
             border-radius: 70px;
             padding: 10px 15px;
             font-size: 14px;
         }
-        .wrapper{
-            width: 250px;
+
+        .wrapper {
+            width: 280px;
             margin-top: 10px;
-            background-color:#DEEED5;
+            background-color: #DEEED5;
             border-radius: 40px;
             height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
+
+        }
+
+        .firstDataCloumn {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-left: 10px;
+
+        }
+
+        .secondDataCloumn {
+            display: flex;
+            flex-direction: column;
+            margin-left: 610px;
+            margin-top: -278px;
+        }
+
+        .wool_container{
+            margin-left: 300px;
         }
     }
 }
@@ -77,7 +98,7 @@
 .submit_button {
     width: 200px;
     color: #fff;
-    background-color: #DEEED5;
+    background-color: #90A47A;
     border: none;
     margin-top: 10px;
     border-radius: 40px;
@@ -87,10 +108,10 @@
 }
 
 .submit_button:hover {
-    background-color: #45a049;
+    background-color: #5F6F4E;
 }
 
-
+.wool_dog
 .name_dog,
 .breed_dog,
 .coat_dog,
@@ -102,7 +123,7 @@
     color: #000;
     text-align: center;
     font-family: "Spectral SC";
-    font-size: 28px;
+    font-size: 19px;
     font-weight: 600;
     margin-bottom: 5px;
     font-weight: bold;
@@ -125,9 +146,9 @@
 }
 
 .photo_dog {
-    height: 300px;
-    width: 300px;
-   
+    height: 350px;
+    width: 350px;
+    margin-left: 50px;
     border-radius: 40px;
     background-color: #CBDCBB;
 }
@@ -138,19 +159,21 @@
     height: 600px;
     white-space: nowrap;
 
-  }
-  
-  .TreeElement{
+}
+
+.TreeElement {
     width: 50%;
     height: min-content;
     display: flex;
     justify-content: center;
     gap: 20px;
-  }
-  .Parents{
+}
+
+.Parents {
     display: flex;
-    
-  }
-  .Ancestors {
+
+}
+
+.Ancestors {
     display: flex;
-  }
+}

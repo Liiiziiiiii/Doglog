@@ -1,59 +1,122 @@
-import React, { useState, useEffect} from "react";
-import Dog from "./DogModel";
+import React, { useState, useEffect } from "react";
 import "./Tree.css";
-import DogTreeElement from "../GlobalComponents/DogTreeElement";
 import { useNavigate, useParams } from "react-router-dom";
+import AddPicture from "../../images/add_picture.png";
 import axios from 'axios';
-import { date } from "yup";
-
-
+import DogTreeElement from "../GlobalComponents/DogTreeElement";
 const Tree = () => {
-  const {dogId} = useParams();
+  const { dogId } = useParams();
   const navigate = useNavigate();
 
-  const [dog, setDog] = useState(new Dog("Lucky", "Rosa", "John","Pyshunka",  "Jula","Bobik", "Kokosik"));
+  const [dog, setDog] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => { 
-        try {
-            const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/Dog/${dogId}`); 
-            console.log('Response:', response);
-            const dogData = response.data
-            setDog(prevState => ({...prevState, father:dogData.father, mother:dogData.mother}))
-            
-        } catch (error) {
-            console.error('Error:', error);
-        }
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/dog-with-parents/${dogId}`);
+        setDog(response.data);
+      } catch (error) {
+        console.error('Error:', error);
+      }
     };
 
-    fetchData(); 
-}, [dogId, navigate]);
+    fetchData();
+  }, [dogId, navigate]);
 
-
-    return (
-      <div className="Tree">
-
-        <div className="Parents">
-          <div className="TreeElement">
-            <DogTreeElement name="Батько" dog={dog.father} ></DogTreeElement>
+  return (
+    <div className="Tree">
+      {dog ? (
+        <div>
+          <div className="Parents">
+            <div className="TreeElement">
+              {dog.father ? (
+                <DogTreeElement name="Батько" dog={dog.father} />
+              ) : (
+                <div>
+                  <p>Батько не визначений</p>
+                  <img
+                    src={AddPicture}
+                    alt="Placeholder"
+                    className="DogPhoto"
+                  />
+                </div>
+              )}
+            </div>
+            <div className="TreeElement">
+              {dog.mother ? (
+                <DogTreeElement name="Матір" dog={dog.mother} />
+              ) : (
+                <div>
+                  <p>Матір не визначена</p>
+                  <img
+                    src={AddPicture}
+                    alt="Placeholder"
+                    className="DogPhoto"
+                  />
+                </div>
+              )}
+            </div>
           </div>
-          <div className="TreeElement">
-            <DogTreeElement name="Матір" dog={dog.mother}></DogTreeElement>
+          <div className="Ancestors">
+            <div className="TreeElement">
+              {dog.grandmaMa ? (
+                <DogTreeElement name="Бабуся (Мати)" dog={dog.grandmaMa} />
+              ) : (
+                <div>
+                  <p>Бабуся (Мати) не визначена</p>
+                  <img
+                    src={AddPicture}
+                    alt="Placeholder"
+                    className="DogPhoto"
+                  />
+                </div>
+              )}
+              {dog.grandadMa ? (
+                <DogTreeElement name="Дідусь (Мати)" dog={dog.grandadMa} />
+              ) : (
+                <div>
+                  <p>Дідусь (Мати) не визначений</p>
+                  <img
+                    src={AddPicture}
+                    alt="Placeholder"
+                    className="DogPhoto"
+                  />
+                </div>
+              )}
+            </div>
+            <div className="TreeElement">
+              {dog.grandmaFa ? (
+                <DogTreeElement name="Бабуся (Батько)" dog={dog.grandmaFa} />
+              ) : (
+                <div>
+                  <p>Бабуся (Батько) не визначена</p>
+                  <img
+                    src={AddPicture}
+                    alt="Placeholder"
+                    className="DogPhoto"
+                  />
+                </div>
+              )}
+              {dog.grandadFa ? (
+                <DogTreeElement name="Дідусь (Батько)" dog={dog.grandadFa} />
+              ) : (
+                <div>
+                  <p>Дідусь (Батько) не визначений</p>
+                  <img
+                    src={AddPicture}
+                    alt="Placeholder"
+                    className="DogPhoto"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
-        <div className="Ancestors">
-          <div className="TreeElement">
-            <DogTreeElement name="Бабуся" dog={dog.grandmaMa}></DogTreeElement>
-            <DogTreeElement name="Дідусь" dog={dog.grandmaFa}></DogTreeElement>
-          </div>
-          <div className="TreeElement">
-            <DogTreeElement name="Бабуся" dog={dog.grandadMa}></DogTreeElement>
-            <DogTreeElement name="Дідусь" dog={dog.grandadFa}></DogTreeElement>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+};
 
 export default Tree;
