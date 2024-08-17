@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_URL = "http...."
+export const API_URL = "https://lpwfmjjv-5254.euw.devtunnels.ms"
 
 const $api = axios.create(
     {

@@ -8,7 +8,7 @@ const PuppiesDogPage = ({ dogId }) => {
     useEffect(() => {
         const fetchDogPhotos = async () => {
             try {
-                const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/with-children/${dogId}`);
+                const response = await axios.get(`https://8gq2pvcg-5254.euw.devtunnels.ms/api/DogDetails/with-children/${dogId}`);
                 console.log('Puppies Response:', response.data);
                 setDogData(response.data);
             } catch (error) {

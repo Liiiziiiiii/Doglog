@@ -6,6 +6,7 @@ import axios from 'axios';
 import './LogIn.scss';
 import { Footer } from '../Footer';
 
+
 const LogIn = () => {
     const navigate = useNavigate();
 
@@ -20,7 +21,7 @@ const LogIn = () => {
         }),
         onSubmit: async (values) => {
             try {
-                const response = await axios.post('//apiproject-prod.us-east-1.elasticbeanstalk.com/api/Auth/login', values);
+                const response = await axios.post('https://8gq2pvcg-5254.euw.devtunnels.ms/api/Auth/login', values);
                 console.log('Response:', response);
 
                 if (response.status === 200) {
@@ -59,10 +60,10 @@ const LogIn = () => {
                 <div>
                     <h1>Мій Акаунт</h1>
                     <div>
-                        <InputField type="text" id="Name" name="Name" placeholder="Name" className="rounded-input" required />
+                        <input type="text" id="Name" name="Name" placeholder="Name" className="rounded-input" value={formik.values.Name} onChange={formik.handleChange} required />
                     </div>
                     <div>
-                        <InputField type="password" id="Password" name="Password" placeholder="Password" className="rounded-input" required />
+                        <input type="password" id="Password" name="Password" placeholder="Password" className="rounded-input" value={formik.values.Password} onChange={formik.handleChange} required  />
                     </div>
                     <div className="forgot-password">
                         <p><a href="#">Забули пароль?</a></p>
