@@ -33,7 +33,7 @@ const EditUserData = () => {
             try {
                 console.log('values: ', values);
 
-                const response = await axios.put(`https://8gq2pvcg-5254.euw.devtunnels.ms/api/Users/${userId}`, values);
+                const response = await axios.put(`https://h4572thw-5254.euw.devtunnels.ms/api/Users/${userId}`, values);
                 console.log('Response:', response);
                 if (response.status === 204) {
                     navigate(`/myaccount/${userId}`);
@@ -47,7 +47,7 @@ const EditUserData = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.get(`https://8gq2pvcg-5254.euw.devtunnels.ms/api/Users/${userId}`);
+                const response = await axios.get(`https://h4572thw-5254.euw.devtunnels.ms/api/Users/${userId}`);
                 const userData = response.data;
                 formik.setValues({
                     Photo: userData.photo || '',

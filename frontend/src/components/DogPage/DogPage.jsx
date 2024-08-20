@@ -32,7 +32,7 @@ const DogPage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://8gq2pvcg-5254.euw.devtunnels.ms/api/Dog/${dogId}`);
+                const response = await axios.get(`https://h4572thw-5254.euw.devtunnels.ms/api/Dog/${dogId}`);
                 console.log('Response:', response.data);
                 setDogData(response.data);
             } catch (error) {

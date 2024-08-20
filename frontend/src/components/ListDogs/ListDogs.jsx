@@ -26,7 +26,7 @@ const ListDogs = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            let url = `https://8gq2pvcg-5254.euw.devtunnels.ms/api/Dog/GetDogByBreed/${breed}`;
+            let url = `https://h4572thw-5254.euw.devtunnels.ms/api/Dog/GetDogByBreed/${breed}`;
 
             try {
                 const response = await axios.get(url);

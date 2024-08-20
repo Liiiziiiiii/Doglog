@@ -32,7 +32,7 @@ const CreateAccount = () => {
         }),
         onSubmit: async (values) => {
             try {
-                const response = await axios.post('https://8gq2pvcg-5254.euw.devtunnels.ms/api/Auth/register', values);
+                const response = await axios.post('https://h4572thw-5254.euw.devtunnels.ms/api/Auth/register', values);
                 console.log('Response:', response);
                 if(response.status === 201){
                     navigate("/");

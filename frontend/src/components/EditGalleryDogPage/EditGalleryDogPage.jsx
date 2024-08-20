@@ -26,7 +26,7 @@ const EditGalleryDogPage = ({ dogPhotos, onClose }) => {
     const handleAddPhoto = async () => {
         if (newPhoto) {
             try {
-                const response = await axios.post('https://8gq2pvcg-5254.euw.devtunnels.ms/api/DogAlbum', {
+                const response = await axios.post('https://h4572thw-5254.euw.devtunnels.ms/api/DogAlbum', {
                     photo: newPhoto,
                     dogId: dogId
                 });
@@ -42,7 +42,7 @@ const EditGalleryDogPage = ({ dogPhotos, onClose }) => {
 
     const handleDeletePhoto = async (photoId) => {
         try {
-            await axios.delete(`https://lpwfmjjv-5254.euw.devtunnels.ms/api/DogAlbum/${photoId}`);
+            await axios.delete(`https://h4572thw-5254.euw.devtunnels.ms/api/DogAlbum/${photoId}`);
             setPhotos(photos.filter(photo => photo.id !== photoId));
             console.log("photoId- ", photoId);
         } catch (error) {

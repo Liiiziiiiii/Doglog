@@ -22,7 +22,7 @@ const LogIn = () => {
         }),
         onSubmit: async (values) => {
             try {
-                const response = await axios.post('https://8gq2pvcg-5254.euw.devtunnels.ms/api/Auth/login', values);
+                const response = await axios.post('https://h4572thw-5254.euw.devtunnels.ms/api/Auth/login', values);
                 console.log('Response:', response);
 
                 if (response.status === 200) {

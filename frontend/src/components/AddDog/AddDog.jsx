@@ -51,7 +51,7 @@ const AddDog = ({ dog }) => {
     console.log(formData);
     try {
       const response = await axios.post(
-        "https://8gq2pvcg-5254.euw.devtunnels.ms/api/Dog",
+        "https://h4572thw-5254.euw.devtunnels.ms/api/Dog",
         formData
       );
       console.log("Response:", response);
