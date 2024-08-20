@@ -9,7 +9,7 @@ import { Footer } from '../Footer';
 
 const LogIn = () => {
     const navigate = useNavigate();
-    const [userRegistered, setUserRegistered] = useState(true);
+    const [userRegistered, setUserRegistered] = useState(true)
 
     const formik = useFormik({
         initialValues: {
@@ -29,14 +29,14 @@ const LogIn = () => {
                     console.log("Login successful", response.data);
 
                     localStorage.setItem("loggedIn", true);
-                    localStorage.setItem("token", response.token); 
-                    localStorage.setItem("UserId", response.userId); 
+                    localStorage.setItem("token", response.data); 
+                    localStorage.setItem("UserId", response.data); 
 
-                    navigate(`/myaccount/${response.data.userId}`);
+                    navigate(`/myaccount/${response.data}`);
                 }
             } catch (error) {
                 console.error('Error:', error);
-                setUserRegistered(false);
+                setUserRegistered(false)
             }
         },
     });
@@ -70,28 +70,10 @@ const LogIn = () => {
                 <div>
                     <h1>Мій Акаунт</h1>
                     <div>
-                        <input 
-                            type="text" 
-                            id="Name" 
-                            name="Name" 
-                            placeholder="Name" 
-                            className="rounded-input" 
-                            value={formik.values.Name} 
-                            onChange={formik.handleChange} 
-                            required 
-                        />
+                        <input type="text" id="Name" name="Name" placeholder="Name" className="rounded-input" value={formik.values.Name} onChange={formik.handleChange} required />
                     </div>
                     <div>
-                        <input 
-                            type="password" 
-                            id="Password" 
-                            name="Password" 
-                            placeholder="Password" 
-                            className="rounded-input" 
-                            value={formik.values.Password} 
-                            onChange={formik.handleChange} 
-                            required  
-                        />
+                        <input type="password" id="Password" name="Password" placeholder="Password" className="rounded-input" value={formik.values.Password} onChange={formik.handleChange} required  />
                     </div>
                     <div className="forgot-password">
                         <p><a href="#">Забули пароль?</a></p>
