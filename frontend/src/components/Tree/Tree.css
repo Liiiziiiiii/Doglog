@@ -1,26 +1,21 @@
-.Tree {
-    background-color: #C1CEB4;
-    padding: 10px;
-    height: 600px;
-    white-space: nowrap;
-    border-radius: 30px;
-  width: 95%;
-  margin: 30px auto;
+.TreeElementDog {
+  margin-top: 10px;
+  width: 50%;
+  height: min-content;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-left: 120px;
+}
 
+.TreeDog {
+  background-color: #C1CEB4;
+  padding: 10px;
+  height: 950px;
+  white-space: nowrap;
+  width: 1700px;
+  border-radius:3rem;
+  display: inline-block;
+  width: max-content; 
 
-  }
-  
-  .TreeElement{
-    width: 50%;
-    height: min-content;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  .Parents{
-    display: flex;
-    
-  }
-  .Ancestors {
-    display: flex;
-  }
+}

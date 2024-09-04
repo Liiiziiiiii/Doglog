@@ -6,12 +6,11 @@
 }
 
 .AddPicture {
-  width: 250px;
+  width: 210px;
   height: 180px;
   background-color: #BBD7A2;
   border: 3px solid #483636;
   border-radius: 30px;
-  display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
@@ -39,10 +38,42 @@
 }
 
 .DogPhoto {
-  width: 200px;
-  height: 200px;
+  width: 190px;
+  height: 160px;
   border-radius: 1rem;
   color: #505050;
   margin: 1rem 2rem;
-  border: solid;
+  margin-left: 50px;
+
+}
+
+.DogElement {
+  position: relative;
+}
+
+.SuggestionsList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px; 
+  overflow-y: auto;
+  background-color: white;
+  z-index: 5; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.SuggestionsList li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.SuggestionsList li:hover {
+  background-color: #f0f0f0;
+}
+
+.dogInfo
+.TreeElementDog
+{
+  flex-direction: column;
 }

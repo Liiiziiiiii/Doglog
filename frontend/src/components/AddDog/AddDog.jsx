@@ -6,10 +6,13 @@ import FooterReg from "../Footer/Footer";
 import axios from "axios";
 import AddDogTreeElement from "../GlobalComponents/AddTreeDogElement/AddTreeDogElement";
 import { breeds } from '../listDogName';
+import AddDogNode from "../DogTree/AddDogNode"
 
 const AddDog = ({ dog }) => {
   const [formData, setFormData] = useState({
+    id: null,
     name: "",
+    photo: "",
     breed: "",
     wool: "",
     dateBirth: "",
@@ -18,37 +21,83 @@ const AddDog = ({ dog }) => {
     weight: 0,
     chip: "",
     mother: {
+      id: null,
       name: "",
     },
     father: {
+      id: null,
       name: "",
     },
   });
 
+  const [dogId, setDogId] = useState(null);
+
   useEffect(() => {
     if (dog) {
       setFormData(dog);
+      if (dog.id) {
+        setDogId(dog.id);
+      }
     }
   }, [dog]);
+
+  useEffect(() => {
+    if (dogId) {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/dog-with-ancestors/${dogId}`);
+          const data = response.data;
+
+          setFormData((prevData) => ({
+            ...prevData,
+            dog: data || { id: null, name: "" },
+            mother: data.mother || { id: null, name: "" },
+            father: data.father || { id: null, name: "" },
+          }));
+
+          console.log('Fetched Data:', data);
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      };
+
+      fetchData();
+    }
+  }, [dogId]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
-    }));
+    }
+    ));
   };
 
-  const handleUpdate = (updateObj) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      ...updateObj,
-    }));
+  const handleUpdate = (updateObj, parentType) => {
+    if (parentType === 'mother') {
+      setFormData((prevData) => ({
+        ...prevData,
+        mother: updateObj,
+      }));
+    } else if (parentType === 'father') {
+      setFormData((prevData) => ({
+        ...prevData,
+        father: updateObj,
+      }));
+    }
+
+    if (updateObj.id) {
+      setDogId(updateObj.id);
+    }
   };
+
+
+
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(formData);
+    console.log("Form Data:", formData);
     try {
       const response = await axios.post(
         "https://h4572thw-5254.euw.devtunnels.ms/api/Dog",
@@ -79,7 +128,6 @@ const AddDog = ({ dog }) => {
               </button>
               <input type="file" accept="image/*" />
             </div>
-
             <div className="form_fields">
               <div className="firstDataCloumn">
                 <div>
@@ -94,7 +142,6 @@ const AddDog = ({ dog }) => {
                   />
                 </div>
                 <div className="wool_container">
-
                   <div className="wrapper">
                     <label htmlFor="breed_dog" className="gender_dog">
                       Порода:
@@ -142,7 +189,6 @@ const AddDog = ({ dog }) => {
                   />
                 </div>
               </div>
-
               <div className="secondDataCloumn">
                 <div className="wrapper">
                   <label className="gender_dog">Стать:</label>
@@ -201,51 +247,8 @@ const AddDog = ({ dog }) => {
           </button>
         </form>
       </div>
+      <AddDogNode />
 
-      <div className="Tree">
-        <div className="Parents">
-          <div className="TreeElement">
-            <AddDogTreeElement
-              name="Батько"
-              obj={formData.father}
-              onUpdate={handleUpdate}
-            />
-          </div>
-          <div className="TreeElement">
-            <AddDogTreeElement
-              name="Матір"
-              obj={formData.mother}
-              onUpdate={handleUpdate}
-            />
-          </div>
-        </div>
-        <div className="Ancestors">
-          <div className="TreeElement">
-            <AddDogTreeElement
-              name="Бабуся"
-              obj={formData}
-              onUpdate={handleUpdate}
-            />
-            <AddDogTreeElement
-              name="Дідусь"
-              obj={formData}
-              onUpdate={handleUpdate}
-            />
-          </div>
-          <div className="TreeElement">
-            <AddDogTreeElement
-              name="Бабуся"
-              obj={formData}
-              onUpdate={handleUpdate}
-            />
-            <AddDogTreeElement
-              name="Дідусь"
-              obj={formData}
-              onUpdate={handleUpdate}
-            />
-          </div>
-        </div>
-      </div>
       <FooterReg />
     </>
   );

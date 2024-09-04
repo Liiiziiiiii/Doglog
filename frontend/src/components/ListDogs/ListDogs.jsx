@@ -10,6 +10,7 @@ const ListDogs = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [breed, setBreed] = useState('');
+    const [ksy, setKsy] = useState(0);
     const [wool, setWool] = useState('default');
     const [originalUserData, setOriginalUserData] = useState([]);
     const [filteredUserData, setFilteredUserData] = useState([]);
@@ -19,18 +20,21 @@ const ListDogs = () => {
     const [puppiesFilter, setPuppiesFilter] = useState('default');
 
     useEffect(() => {
-        if (location.state && location.state.breed) {
-            setBreed(location.state.breed);
+        if (location.state) {
+            if (location.state.breed) {
+                setBreed(location.state.breed);
+            }
+            if (location.state.ksy) {
+                setKsy(location.state.ksy);
+            }
         }
     }, [location.state]);
 
     useEffect(() => {
         const fetchData = async () => {
-            let url = `https://h4572thw-5254.euw.devtunnels.ms/api/Dog/GetDogByBreed/${breed}`;
-
             try {
-                const response = await axios.get(url);
-                console.log("Response data: ", response.data);  
+                const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/Dog/GetDogByBreed/${breed}`);
+                console.log("Response data: ", response.data);
 
                 setOriginalUserData(response.data);
                 setFilteredUserData(response.data);
@@ -40,7 +44,7 @@ const ListDogs = () => {
         };
 
         fetchData();
-    }, [breed]);
+    }, [breed, ksy]);
 
     const handleGoBack = () => {
         navigate(-1);
@@ -88,13 +92,27 @@ const ListDogs = () => {
         return 'default';
     };
 
-    const filteredData = filteredUserData.filter(dog =>
-        (dog.name && dog.name.toLowerCase().includes(searchName.toLowerCase())) &&
+    const isNumeric = (value) => {
+        return !isNaN(value) && !isNaN(parseFloat(value));
+    };
+    const filteredData = filteredUserData
+    .filter(dog =>
+        (
+            (dog.name && dog.name.toLowerCase().includes(searchName.toLowerCase())) ||
+            (dog.ksy.toString().includes(searchName))
+        ) &&
         (dog.userName && dog.userName.toLowerCase().includes(searchNameUser.toLowerCase())) &&
         (ageFilter === 'default' || ageCategory(dog.age) === ageFilter) &&
         (puppiesFilter === 'default' || (puppiesFilter === 'available' ? dog.puppies : !dog.puppies)) &&
         (wool === 'default' || dog.wool === wool)
-    );
+    )
+    .sort((a, b) => {
+        if (isNumeric(searchName)) {
+            return a.ksy - b.ksy;
+        } else {
+            return a.name.localeCompare(b.name);
+        }
+    });
 
     return (
         <div className="">
@@ -133,7 +151,7 @@ const ListDogs = () => {
                     </select>
                 </div>
                 <div className="search_container_1">
-                    <input type="text" id="search_input" placeholder="Введіть кличку собаки" value={searchName} onChange={handleSearchNameChange} />
+                    <input type="text" id="search_input" placeholder="Введіть кличку собаки або ксу" value={searchName} onChange={handleSearchNameChange} />
                     <img className='search_dogs_name' src={search} alt='search' />
                 </div>
                 <div className="search_container_2">
@@ -153,6 +171,10 @@ const ListDogs = () => {
                                 <span className='value'>{item.sex}</span>
                             </div>
                             <div className='breed_dog_details'>
+                                <span className='label'>КСУ:</span>
+                                <span className='value'>{item.ksy}</span>
+                            </div>
+                            <div className='breed_dog_details'>
                                 <span className='label'>Шерсть:</span>
                                 <span className='value'>{item.wool}</span>
                             </div>
@@ -168,8 +190,14 @@ const ListDogs = () => {
                                 <span className='label'>Ім'я розплідника:</span>
                                 <span className='value'>{item.userName}</span>
                             </div>
+                            <div className='breed_dog_details'>
+                                <span className='label'>Дата народження:</span>
+                                <span className='value'>{item.dateBirth ? new Date(item.dateBirth).toLocaleDateString() : 'Невідомо'}</span>
+                            </div>
                         </div>
+                        <div className="next-button">
                         <button className='button_learn_more' onClick={() => handleDogPage(item.id)}>Дізнатись більше</button>
+                        </div>
                     </div>
                 ))}
             </div>

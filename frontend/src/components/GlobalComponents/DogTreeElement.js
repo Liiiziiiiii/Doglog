@@ -1,4 +1,3 @@
-// DogTreeElement.js
 import React from 'react';
 import AddPicture from "../../images/add_picture.png";
 import "./DogTreeElement"

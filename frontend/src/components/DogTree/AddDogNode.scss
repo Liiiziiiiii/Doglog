@@ -1,0 +1,24 @@
+.TreeContainer {
+    flex-direction: column;
+    align-items: center;
+}
+
+.dog-names{
+    height: 50px;
+
+}
+
+.TreeElementFourGeneration {
+    margin-top: 100px;
+    width: 40%;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.FourGeneration{
+    margin-top: -50px;
+    display: flex;
+    gap: 18px;
+}

@@ -15,12 +15,12 @@ const MyAccount = () => {
     const [userData, setUserData] = useState(null);
 
 
-    console.log(userId);
+    console.log("MyAccount- " + userId);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://h4572thw-5254.euw.devtunnels.ms/api/DogDetails/users-with-dogs/${userId}`);
+                const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/users-with-dogs/${userId}`);
                 console.log('Response:', response.data);
                 setUserData(response.data);
             } catch (error) {
@@ -88,7 +88,6 @@ const MyAccount = () => {
             </div>
             {userData && userData.dogs && (
                 <div className='my_dogs_container'>
-
                     <div className="items-container">
                         <div className="work-section-info-dog add-dog-button" onClick={() => navigate('/addDog')}>
                             <FaPlus size={24} />

@@ -31,7 +31,7 @@ const DogProfileView = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://h4572thw-5254.euw.devtunnels.ms/api/Dog/${dogId}`);
+                const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/Dog/${dogId}`);
                 console.log('Response:', response.data);
                 console.log("dogId - ", dogId);
 

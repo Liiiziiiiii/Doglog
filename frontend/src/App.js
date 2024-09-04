@@ -12,6 +12,7 @@ import EditUserData from './components/EditUserData/EditUserData';
 import DogPage from './components/DogPage/DogPage';
 import OwnerDogPage from './components/OwnerDogPage/OwnerDogPage';
 import DogProfileView from './components/DogProfileView/DogProfileView';
+import AddDogNode from './components/DogTree/AddDogNode';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/myaccount/:userId" element={<MyAccount />} />
+          <Route exact path="/add" element={<AddDogNode />} />
           <Route exact path="/addDog" element={<AddDog />} />
           <Route exact path="/tree/:dogId" element={<Tree />} />
           <Route exact path="/list-dog" element={<ListDogs />} />
