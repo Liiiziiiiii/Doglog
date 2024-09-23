@@ -128,9 +128,10 @@ const AddDog = ({ dog }) => {
               </button>
               <input type="file" accept="image/*" />
             </div>
+
             <div className="form_fields">
               <div className="firstDataCloumn">
-                <div>
+                <div className="wool_container">
                   <input
                     className="basicInput"
                     placeholder="Кличка:"
@@ -177,7 +178,7 @@ const AddDog = ({ dog }) => {
                     </select>
                   </div>
                 </div>
-                <div>
+                <div className="wool_container">
                   <input
                     className="basicInput"
                     placeholder="Дата народження:"
@@ -187,6 +188,20 @@ const AddDog = ({ dog }) => {
                     value={formData.dateBirth}
                     onChange={handleChange}
                   />
+                </div>
+
+                <div className="diplom_container">
+                  <div className="wrapperdiplom">
+                    <label className="gender_dog">Дипломи:</label>
+                    <textarea
+                      className="largeInput"
+                      id="diplomas"
+                      name="diplomas"
+                      placeholder="Введіть дані"
+                      value={formData.diplomas}
+                      onChange={handleChange}
+                    ></textarea>
+                  </div>
                 </div>
               </div>
               <div className="secondDataCloumn">
@@ -206,6 +221,7 @@ const AddDog = ({ dog }) => {
                 <div className="wrapper">
                   <label className="height_dog">Зріст:</label>
                   <input
+                    className="input_field"
                     type="number"
                     id="height_dog"
                     name="growth"
@@ -218,6 +234,7 @@ const AddDog = ({ dog }) => {
                 <div className="wrapper">
                   <label className="weight_dog">Вага:</label>
                   <input
+                    className="input_field"
                     type="number"
                     id="weight_dog"
                     name="weight"
@@ -230,6 +247,7 @@ const AddDog = ({ dog }) => {
                 <div className="wrapper">
                   <label className="number_dog">Чіп:</label>
                   <input
+                    className="input_field"
                     type="number"
                     id="number_dog"
                     name="chip"
@@ -239,6 +257,61 @@ const AddDog = ({ dog }) => {
                     min="0"
                   />
                 </div>
+
+                <div className="wrapperdiplom">
+                  <label className="weight_dog">Екстер'єр:</label>
+                  <div className="exterior-options">
+                    <label>
+                      Відмінно
+                      <input
+                        className="exterior_input"
+                        type="number"
+                        name="excellent"
+                        value={formData.excellent || ""}
+                        onChange={handleChange}
+                        //placeholder="Кількість"
+                        min="0"
+                      />
+                    </label>
+                    <label>
+                      Дуже добре
+                      <input
+                        className="exterior_input"
+                        type="number"
+                        name="veryGood"
+                        value={formData.veryGood || ""}
+                        onChange={handleChange}
+                       // placeholder="Кількість"
+                        min="0"
+                      />
+                    </label>
+                    <label>
+                      Добре
+                      <input
+                        className="exterior_input"
+                        type="number"
+                        name="good"
+                        value={formData.good || ""}
+                        onChange={handleChange}
+                        //placeholder="Кількість"
+                        min="0"
+                      />
+                    </label>
+                    <label>
+                      Задовільно
+                      <input
+                        className="exterior_input"
+                        type="number"
+                        name="satisfactory"
+                        value={formData.satisfactory || ""}
+                        onChange={handleChange}
+                       // placeholder="Кількість"
+                        min="0"
+                      />
+                    </label>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>

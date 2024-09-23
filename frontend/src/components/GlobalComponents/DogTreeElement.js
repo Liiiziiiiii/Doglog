@@ -5,7 +5,7 @@ import "./DogTreeElement"
 const DogTreeElement = ({ name, dog }) => {
   if (!dog) return null;
 
-  console.log("Dog photo URL:", dog.photo);
+  //console.log("Dog photo URL:", dog.photo);
 
   return (
     <div className="DogTreeElement">

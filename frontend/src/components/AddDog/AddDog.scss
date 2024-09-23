@@ -20,6 +20,8 @@
 
     .form_fields {
         margin: 20px 40px 20px 10px;
+        display: flex;
+        gap: 50px;
 
         label {
             //font-weight: bold;
@@ -33,17 +35,15 @@
             text-rendering: geometricPrecision;
         }
 
-        input {
-            width: 150px;
-            border: 10px solid #DEEED5;
-            border-radius: 70px;
-            padding: 10px 15px;
-            font-size: 16px;
-        }
+
 
         .basicInput {
             margin-top: 10px;
             width: 230px;
+            border: 10px solid #DEEED5;
+            border-radius: 70px;
+            padding: 10px 15px;
+            font-size: 16px;
         }
 
         select {
@@ -63,7 +63,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
 
+        .wrapperdiplom {
+            width: 280px;
+            margin-top: 10px;
+            background-color: #DEEED5;
+            border-radius: 40px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .firstDataCloumn {
@@ -77,14 +87,54 @@
         .secondDataCloumn {
             display: flex;
             flex-direction: column;
-            margin-left: 610px;
-            margin-top: -278px;
+            
         }
 
         .wool_container {
             margin-left: 300px;
         }
+
+        .diplom_container {
+            margin-left: 300px;
+
+        }
     }
+}
+
+.exterior_input {
+    width: 30px;
+    height: 14px;
+    text-align: center;
+    transform: translateX(-10px);
+}
+
+.exterior-options {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    padding: 2px;
+    font-size: 16px;
+    border-radius: 22px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+
+    margin-left: 10px;
+}
+
+.exterior-options label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    
+}
+
+.input_field {
+    width: 150px;
+    border: 10px solid #DEEED5;
+    border-radius: 70px;
+    padding: 10px 15px;
+    font-size: 16px;
 }
 
 .modal_add_dog {
@@ -158,9 +208,9 @@
     height: 1350px;
     white-space: nowrap;
     width: 1700px;
-    border-radius:3rem;
+    border-radius: 3rem;
     display: inline-block;
-    width: max-content; 
+    width: max-content;
 
 }
 
@@ -202,4 +252,17 @@
     height: min-content;
     display: flex;
     justify-content: center;
+}
+
+.largeInput {
+    width: 60%;
+    height: 70px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 22px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    resize: vertical;
+    resize: none;
+    margin-left: 10px;
 }

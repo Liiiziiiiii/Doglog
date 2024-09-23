@@ -96,6 +96,7 @@ const DogTreeElement = ({ name, requiredPosition, dogNames }) => {
                     placeholder="Enter or select a dog name"
                 />
                 <datalist id="dog-names">
+                <p>Кличка собаки</p>
                     {dogNames.map(dog => (
                         <option key={dog.id} value={dog.name} data-id={dog.id}>{dog.name}</option>
                     ))}
@@ -363,6 +364,7 @@ const App = () => {
             const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/users-with-dogs/${storedUserId}`);
             const dogNames = response.data.dogs.map(dog => ({ id: dog.id, name: dog.name }));
             setDogNames(dogNames);
+            console.log(response.data);
         };
 
         fetchDogNames();

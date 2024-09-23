@@ -22,3 +22,65 @@
     display: flex;
     gap: 18px;
 }
+
+.dogInfoContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.inputHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.inputHeader p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.dogInfoColumns {
+    position: relative;
+}
+
+.Input {
+    width: 100%;
+    padding: 5px;
+}
+
+.dropdown {
+    position: absolute;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: white;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.dropdownHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.dropdownList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdownList li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dropdownList li:hover {
+    background-color: #e0e0e0;
+}
+

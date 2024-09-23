@@ -4,7 +4,7 @@ import "./AddTreeDogElement.css";
 import AddPicture from "../../../images/add_picture.png";
 
 export default function AddDogTreeElement({ obj = { name: "", photo: "" }, onUpdate, name, isFilled }) {
-    console.log(obj, name, "isFilled",)
+    //console.log(obj, name, "isFilled",)
     const [localObj, setLocalObject] = useState(obj);
     const [userId, setUserId] = useState(null);
     const [nameSuggestions, setNameSuggestions] = useState([]);
@@ -22,7 +22,7 @@ export default function AddDogTreeElement({ obj = { name: "", photo: "" }, onUpd
                 try {
                     const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/users-with-dogs/${storedUserId}`);
                     const dogNames = response.data.dogs.map(dog => ({ id: dog.id, name: dog.name }));
-                    console.log('Dog Names:', dogNames);
+                    //console.log('Dog Names:', dogNames);
                     setNameSuggestions(dogNames);
                 } catch (error) {
                     console.error('Error:', error);

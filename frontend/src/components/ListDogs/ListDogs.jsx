@@ -100,6 +100,7 @@ const ListDogs = () => {
         (
             (dog.name && dog.name.toLowerCase().includes(searchName.toLowerCase())) ||
             (dog.ksy.toString().includes(searchName))
+            (dog.chip.toString().includes(searchName))
         ) &&
         (dog.userName && dog.userName.toLowerCase().includes(searchNameUser.toLowerCase())) &&
         (ageFilter === 'default' || ageCategory(dog.age) === ageFilter) &&
@@ -144,7 +145,7 @@ const ListDogs = () => {
                 <div className="conteiner_age">
                     <select id="filter_age" onChange={handleAgeFilterChange} value={ageFilter}>
                         <option value="default">Вік</option>
-                        <option value="less_than_year">Молодий</option>
+                        <option value="less_than_year">до 1 року</option>
                         <option value="1_5_years">1-5 років</option>
                         <option value="6_10_years">6-10 років</option>
                         <option value="more_than_10_years">Більше 10 років</option>
@@ -173,6 +174,10 @@ const ListDogs = () => {
                             <div className='breed_dog_details'>
                                 <span className='label'>КСУ:</span>
                                 <span className='value'>{item.ksy}</span>
+                            </div>
+                            <div className='breed_dog_details'>
+                                <span className='label'>Чіп:</span>
+                                <span className='value'>{item.chip}</span>
                             </div>
                             <div className='breed_dog_details'>
                                 <span className='label'>Шерсть:</span>

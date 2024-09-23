@@ -56,7 +56,7 @@ const DogPage = () => {
         }
     }
 
-    const handleShowTree= () => {
+    const handleShowTree = () => {
         setActivePage('tree');
         setShowTree(true);
         setShowPuppiesPage(false);
@@ -123,46 +123,69 @@ const DogPage = () => {
                             <div className="image_dog_page">
                                 <img className='photo_dog_page' src={datadog.photo || add_photo_icon} alt="photo_dog_page" />
                             </div>
-                            <div className='dog_page_fields'>
-                                <div className='dog_field_name'>
-                                    <span className='name_dog'>{datadog.name}</span>
+                            <div className='column_dig_info'>
+                                <div className='dog_page_fields'>
+                                    <div className='dog_field_name'>
+                                        <span className='name_dog'>{datadog.name}</span>
+                                    </div>
+                                    <div className='dog_field'>
+                                        <label className='text_dog_detail'>Порода:</label>
+                                        <span className='text_dog_data'>{datadog.breed}</span>
+                                    </div>
+                                    <div className='dog_field'>
+                                        <label className='text_dog_detail'>Вік:</label>
+                                        <span className='text_dog_data'>{datadog.age}</span>
+                                    </div>
+                                    <div className='dog_field'>
+                                        <label className='text_dog_detail'>Стать:</label>
+                                        <span className='text_dog_data'>{datadog.sex}</span>
+                                    </div>
+                                    <div className='dog_field'>
+                                        <label className='text_dog_detail'>Шерсть:</label>
+                                        <span className='text_dog_data'>{datadog.wool}</span>
+                                    </div>
+                                    <div className='dog_field'>
+                                        <label className='text_dog_detail'>Ріст:</label>
+                                        <span className='text_dog_data'>{datadog.growth}</span>
+                                    </div>
+                                    <div className='dog_field'>
+                                        <label className="text_dog_detail">Вага:</label>
+                                        <span className='text_dog_data'>{datadog.weight}</span>
+                                    </div>
+                                    <div className='dog_field'>
+                                        <label className="text_dog_detail">КСУ:</label>
+                                        <span className='text_dog_data'>{datadog.ksy}</span>
+                                    </div>
                                 </div>
-                                <div className='dog_field'>
-                                    <label className='text_dog_detail'>Порода:</label>
-                                    <span className='text_dog_detail'>{datadog.breed}</span>
+                                <div className='column_dog_info'>
+                                    <div className='dog_field exterier_field'>
+                                        <label className='text_dog_detail'>Екстер'єр:</label>
+                                        <div className='exterier_ratings scrollable'>
+                                            {datadog.exterior.split(',').map((rating, index) => (
+                                                <div key={index} className='rating_item'>{rating.trim()}</div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className='dog_field diplom_field'>
+                                        <label className='text_dog_detail'>Дипломи:</label>
+                                        <div className='exterier_ratings scrollable'>
+                                            {datadog.diplomas.split(',').map((diploma, index) => (
+                                                <div key={index} className='diploma_item'>{diploma.trim()}</div>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className='dog_field'>
-                                    <label className='text_dog_detail'>Вік:</label>
-                                    <span className='text_dog_detail'>{datadog.age}</span>
-                                </div>
-                                <div className='dog_field'>
-                                    <label className='text_dog_detail'>Стать:</label>
-                                    <span className='text_dog_detail'>{datadog.sex}</span>
-                                </div>
-                                <div className='dog_field'>
-                                    <label className='text_dog_detail'>Шерсть:</label>
-                                    <span className='text_dog_detail'>{datadog.wool}</span>
-                                </div>
-                                <div className='dog_field'>
-                                    <label className='text_dog_detail'>Ріст:</label>
-                                    <span className='text_dog_detail'>{datadog.growth}</span>
-                                </div>
-                                <div className='dog_field'>
-                                    <label className="text_dog_detail">Вага:</label>
-                                    <span className='text_dog_detail'>{datadog.weight}</span>
-                                </div>
-                                <div className='dog_field'>
-                                    <label className="text_dog_detail">КСУ:</label>
-                                    <span className='text_dog_detail'>{datadog.ksy}</span>
-                                </div>
+
+
+
                             </div>
 
-                            <div>
+                            {/* <div>
                                 <button className='button_edit_dog_data'>
                                     <span className='button_edit_text'>Редагувати</span>
                                     <img className='edit_img' src={edit_img} alt='edit button' />
                                 </button>
-                            </div>
+                            </div> */}
                         </div>
                     </>
                 ) : (
