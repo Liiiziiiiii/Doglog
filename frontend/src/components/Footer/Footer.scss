@@ -3,6 +3,7 @@
     color: #fff;
     text-align: center;
     padding: 10px;
+
 }
 
 footer .logosContainer {
@@ -15,10 +16,27 @@ footer .logosContainer {
 footer .logo {
     width: 200px;
     justify-self: center;
+    @media (max-width: 360px) {
+        width: 140px;
+    }
+
+    @media (min-width: 360px) and (max-width : 600px) {
+        width: 180px;
+    }
 
 }
 
 footer .socialNetworksLogo {
     width: 40px;
     height: 40px;
+
+    @media (max-width: 360px) {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (min-width: 360px) and (max-width : 600px) {
+        width: 30px;
+        height: 30px;
+    }
 }

@@ -5,6 +5,7 @@ import { useLiveQuery } from "dexie-react-hooks";
 import AddPicture from "../../images/add_picture.png";
 import PedigreeLoader from './PedigreeLoader';
 import "./AddDogNode.scss"
+import PlusIcon from "../../images/plus_icon.png"
 
 const db = new Dexie('PedigreeDatabase');
 db.version(1).stores({
@@ -50,6 +51,10 @@ const DogTreeElement = ({ name, requiredPosition, dogNames }) => {
             setDogPhoto(dogData.photo || AddPicture);
         }
     }, [dogData]);
+
+    const handleAdditionalInfoClick = () => {
+        setIsAditionalInfoOpen(!isAditionalInfoOpen)
+    }
 
     const handleNameChange = async (e) => {
         const selectedName = e.target.value;
@@ -111,6 +116,9 @@ const DogTreeElement = ({ name, requiredPosition, dogNames }) => {
                 ref={fileInputRef}
                 style={{ display: 'none' }}
             />
+
+            
+
         </div>
     );
 };

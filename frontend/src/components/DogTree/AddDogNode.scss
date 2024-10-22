@@ -84,3 +84,67 @@
     background-color: #e0e0e0;
 }
 
+.aboutDogInfoContainer{
+    width: 624px;
+    height: 506px;
+    border: #483636;
+    border: 1px solid;
+    border-radius: 70px;
+}
+
+.aboutDogInfoButton{
+    width: 624px;
+    height: 506px;
+    border: #596A47;
+    border: 1px solid;
+    border-radius: 70px;
+    background-color: #DEEED5;
+}
+
+.aboutDogInfoBlock{
+    width: 564px;
+    height: 96px;
+    border: #596A47;
+    border: 1px solid;
+    border-radius: 70px;
+    background-color: #DEEED5;
+}
+
+.aboutDogInfoBlockPhot{
+    width: 105px;
+    height: 73px;
+    border-radius: 70px;
+}
+
+.aboutDogInfoBlockTextWrappper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.aditionalInfoWrapper{
+    width: 372px;
+    height: 214px;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: #483636;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.aditionalInfoInputWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aditionalInfoInput{
+    width: 196px;
+    height: 42px;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: #758664;
+}
