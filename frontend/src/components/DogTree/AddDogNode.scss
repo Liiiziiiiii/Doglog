@@ -3,7 +3,7 @@
     align-items: center;
 }
 
-.dog-names{
+.dog-names {
     height: 50px;
 
 }
@@ -14,10 +14,10 @@
     height: min-content;
     display: flex;
     justify-content: center;
-    
+
 }
 
-.FourGeneration{
+.FourGeneration {
     margin-top: -50px;
     display: flex;
     gap: 18px;
@@ -84,67 +84,154 @@
     background-color: #e0e0e0;
 }
 
-.aboutDogInfoContainer{
-    width: 624px;
-    height: 506px;
-    border: #483636;
-    border: 1px solid;
-    border-radius: 70px;
+.dog-names-list {
+    position: absolute;
+    /* Зробити позицію абсолютною для відображення над іншими елементами */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    /* Встановити максимальну висоту списку */
+    overflow-y: auto;
+    /* Додати прокрутку, якщо список занадто великий */
+    z-index: 10;
+    /* Високий z-index, щоб список був поверх інших елементів */
 }
 
-.aboutDogInfoButton{
-    width: 624px;
-    height: 506px;
-    border: #596A47;
-    border: 1px solid;
-    border-radius: 70px;
-    background-color: #DEEED5;
-}
-
-.aboutDogInfoBlock{
-    width: 564px;
-    height: 96px;
-    border: #596A47;
-    border: 1px solid;
-    border-radius: 70px;
-    background-color: #DEEED5;
-}
-
-.aboutDogInfoBlockPhot{
-    width: 105px;
-    height: 73px;
-    border-radius: 70px;
-}
-
-.aboutDogInfoBlockTextWrappper{
+.dog-item {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    /* Розташування елементів зліва і справа */
+    padding: 8px 12px;
+    /* Відстань всередині елемента списку */
+    border-bottom: 1px solid #eee;
+    /* Лінія під елементами списку */
+    transition: background-color 0.2s;
+    /* Анімація при наведенні */
 }
 
-.aditionalInfoWrapper{
-    width: 372px;
-    height: 214px;
-    border: 1px solid;
-    border-radius: 30px;
-    border-color: #483636;
+.dog-item:hover {
+    background-color: #f0f0f0;
+    /* Зміна фону при наведенні */
+}
+
+.button-group {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    gap: 8px;
 }
 
-.aditionalInfoInputWrapper{
+
+.dogInfo {
+    position: relative;
+}
+
+.dog-names-list {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 1000;
+    width: 270px;
+    /* Щоб відповідало ширині input */
+}
+
+// .btnFilter{
+//     width: 100px;
+//     height: 30px;
+//     background-color: #e0f7db;
+//     border: 2px solid #4b4e4c;
+//     border-radius: 20px;
+//     margin-top: 10px;
+// }
+
+.btnFilter {
+    width: 100px;
+    height: 30px;
+    border: 2px solid #4b4e4c;
+    background-color: #e0f7db;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 20px;
+    line-height: 1.2;
+}
+
+.btnFilter.active {
+    border-color: #333;
+    /* темніший бордер для активної кнопки */
+    background-color: #f0f0f0;
+    /* ви можете також змінювати фон для виділення */
+}
+
+.btnFilter:hover {
+    border-color: #555;
+    /* бордер при наведенні */
+}
+
+
+.button-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    gap: 10px;
+    margin-left: 25px;
 }
 
-.aditionalInfoInput{
-    width: 196px;
-    height: 42px;
-    border: 1px solid;
-    border-radius: 30px;
-    border-color: #758664;
+.dog-names-list li {
+    width: 220px;
+    display: flex;
+    align-items: center;
+    /* Вирівнювання по центру вертикально */
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #e0f7db;
+    /* Схожий зелений відтінок */
+    border: 2px solid #4b4e4c;
+    /* Темна обводка */
+    border-radius: 20px;
+    /* Закруглені краї */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.dog-names-list li:hover {
+    background-color: #d2ebc9;
+    /* Трохи світліший колір при наведенні */
+}
+
+.dog-names-list li img {
+    border-radius: 50%;
+    /* Кругле фото */
+    width: 70px;
+    height: 50px;
+    margin-right: 15px;
+    /* Відступ між фото та текстом */
+    border: 2px solid #4b4e4c;
+    /* Додає рамку навколо зображення */
+}
+
+.dog-names-list li .dog-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.dog-names-list li .dog-info p {
+    margin: 0;
+    font-size: 14px;
+    font-family: 'Georgia', serif;
+    /* Схожий на рукописний шрифт */
+}
+
+.dog-names-list li .dog-info p.name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.filterbreed {
+    width: 100px;
 }

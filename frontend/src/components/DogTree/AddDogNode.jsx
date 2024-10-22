@@ -1,16 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import Dexie from 'dexie';
-import { useLiveQuery } from "dexie-react-hooks";
-import AddPicture from "../../images/add_picture.png";
-import PedigreeLoader from './PedigreeLoader';
 import "./AddDogNode.scss"
-import PlusIcon from "../../images/plus_icon.png"
-
-const db = new Dexie('PedigreeDatabase');
-db.version(1).stores({
-    pedigrees: '++id,name,photo,familyposition,father,mother'
-});
+import DogTreeElement from './DogTreeElement'
 
 class Dog {
     constructor(id, name, photo, familyposition, father = null, mother = null) {
@@ -28,100 +20,10 @@ const viewAllData = async () => {
     console.log('All Pedigrees:', allPedigrees);
 };
 
-
-const DogTreeElement = ({ name, requiredPosition, dogNames }) => {
-    const [dogName, setDogName] = useState('');
-    const [dogPhoto, setDogPhoto] = useState(AddPicture);
-    const pedigreeLoader = new PedigreeLoader();
-    const fileInputRef = useRef(null);
-
-    const dogData = useLiveQuery(async () => {
-        if (requiredPosition) {
-            return await db.pedigrees
-                .where('familyposition')
-                .equals(requiredPosition)
-                .first();
-        }
-        return null;
-    });
-
-    useEffect(() => {
-        if (dogData) {
-            setDogName(dogData.name);
-            setDogPhoto(dogData.photo || AddPicture);
-        }
-    }, [dogData]);
-
-    const handleAdditionalInfoClick = () => {
-        setIsAditionalInfoOpen(!isAditionalInfoOpen)
-    }
-
-    const handleNameChange = async (e) => {
-        const selectedName = e.target.value;
-        setDogName(selectedName);
-
-        const selectedDog = dogNames.find(dog => dog.name === selectedName);
-        if (selectedDog) {
-            const dogId = selectedDog.id;
-            const data = await pedigreeLoader.fetchPedigree(dogId, requiredPosition);
-        }
-    };
-
-    const handlePhotoChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = () => setDogPhoto(reader.result);
-            reader.readAsDataURL(file);
-        }
-    };
-
-    const handleImageClick = () => {
-        if (fileInputRef.current) {
-            fileInputRef.current.click();
-        }
-    };
-
-    return (
-        <div className="TreeElementDogNode">
-            <div className='dogInfo'>
-                <p>{name}</p>
-                <img
-                    src={dogPhoto}
-                    alt={dogName || 'No photo'}
-                    className="DogPhoto"
-                    onClick={handleImageClick}
-                />
-            </div>
-            <div className='dogInfo'>
-                <input className="Input"
-                    list="dog-names"
-                    value={dogName}
-                    onChange={handleNameChange}
-                    placeholder="Enter or select a dog name"
-                />
-                <datalist id="dog-names">
-                <p>Кличка собаки</p>
-                    {dogNames.map(dog => (
-                        <option key={dog.id} value={dog.name} data-id={dog.id}>{dog.name}</option>
-                    ))}
-                </datalist>
-            </div>
-
-
-            <input
-                type="file"
-                accept="image/*"
-                onChange={handlePhotoChange}
-                ref={fileInputRef}
-                style={{ display: 'none' }}
-            />
-
-            
-
-        </div>
-    );
-};
+const db = new Dexie('PedigreeDatabase');
+db.version(1).stores({
+    pedigrees: '++id,name,photo,familyposition,father,mother'
+});
 
 const DogTreeNode = ({ dog, dogNames }) => {
 
@@ -370,7 +272,8 @@ const App = () => {
         const fetchDogNames = async () => {
             const storedUserId = localStorage.getItem('UserId');
             const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/users-with-dogs/${storedUserId}`);
-            const dogNames = response.data.dogs.map(dog => ({ id: dog.id, name: dog.name }));
+            const dogNames = response.data.dogs.map(dog =>
+                ({ id: dog.id, name: dog.name, photo: dog.photo, chip: dog.chip, dateBirth: dog.dateBirth, ukpms: dog.ukpms }));
             setDogNames(dogNames);
             console.log(response.data);
         };

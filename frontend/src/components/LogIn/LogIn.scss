@@ -7,17 +7,6 @@
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
-
-    @media (max-width: 360px) {
-        width: 90%;
-    }
-
-
-    @media (min-width: 360px) and (max-width : 600px) {
-        width: 90%;
-    }
-
-
 }
 
 .rounded-input {
@@ -27,19 +16,13 @@
     border-radius: 70px;
     border: 1px solid white;
     box-sizing: border-box;
-    @media (max-width: 360px) {
-        width: 220px;
-    }
-
-    @media (min-width: 360px) and (max-width : 600px) {
-        width: 250px;
-    }
 }
 
 .forgot-password {
     margin-top: 10px;
     font-size: 14px;
     color: #000;
+    margin-left: 200px;
     margin-top: -20px;
 }
 
@@ -62,13 +45,6 @@
     border: none;
     cursor: pointer;
     font-size: 18px;
-    @media (max-width: 360px) {
-        width: 220px;
-    }
-
-    @media (min-width: 360px) and (max-width : 600px) {
-        width: 250px;
-    }
 }
 
 .login-button:hover {

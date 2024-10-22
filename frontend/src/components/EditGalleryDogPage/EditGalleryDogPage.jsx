@@ -26,7 +26,7 @@ const EditGalleryDogPage = ({ dogPhotos, onClose }) => {
     const handleAddPhoto = async () => {
         if (newPhoto) {
             try {
-                const response = await axios.post('https://h4572thw-5254.euw.devtunnels.ms/api/DogAlbum', {
+                const response = await axios.post('http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogAlbum', {
                     photo: newPhoto,
                     dogId: dogId
                 });

@@ -10,14 +10,6 @@
     background-color: #C1CEB4;
     color: black;
     text-align: center;
-    @media (max-width: 360px) {
-        width: 80%;
-    }
-
-
-    @media (min-width: 360px) and (max-width : 600px) {
-        width: 80%;
-    }
 }
 
 .create-account-heading {
@@ -25,12 +17,7 @@
     font-size: 34px;
     margin-top: -10px;
     font-weight: 500;
-    @media (max-width: 360px) {
-        font-size: 24px;
-    }
-    @media (min-width: 360px) and (max-width : 600px) {
-        font-size: 28px;
-    }
+
 }
 
 .form-group {
@@ -41,7 +28,6 @@
     display: block;
     font-size: 16px;
     margin-bottom: 8px;
-
 }
 
 .form-group input {
@@ -54,14 +40,6 @@
     margin-top: 5px;
     text-align: center;
     color: black;
-    @media (max-width: 360px) {
-        width: 230px;
-    }
-
-
-    @media (min-width: 360px) and (max-width : 600px) {
-        width: 250px;
-    }
 }
 
 .form-group button {
@@ -74,13 +52,4 @@
     border: none;
     cursor: pointer;
     font-size: 18px;
-
-    @media (max-width: 360px) {
-        width: 230px;
-    }
-
-
-    @media (min-width: 360px) and (max-width : 600px) {
-        width: 250px;
-    }
 }

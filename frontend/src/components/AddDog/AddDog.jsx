@@ -100,7 +100,7 @@ const AddDog = ({ dog }) => {
     console.log("Form Data:", formData);
     try {
       const response = await axios.post(
-        "https://h4572thw-5254.euw.devtunnels.ms/api/Dog",
+        "http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/Dog",
         formData
       );
       console.log("Response:", response);
