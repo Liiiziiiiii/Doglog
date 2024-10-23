@@ -11,7 +11,7 @@
 .TreeDog {
   background-color: #C1CEB4;
   padding: 10px;
-  height: 950px;
+  height: min-content;
   white-space: nowrap;
   width: 1700px;
   border-radius:3rem;

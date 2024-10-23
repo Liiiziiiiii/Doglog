@@ -1,0 +1,54 @@
+  .aditionalInfoWrapper{
+    width: 250px;
+    height: 186px;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: #483636;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #DEEED5;
+  }
+  
+  .aditionalInfoInputWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .aditionalInfoInput{
+    width: 110px;
+    height: 25px;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: #758664;
+  }
+
+  .aditionalInfoDataPicker{
+    width: 150px;
+    height: 25px;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: #758664;
+    margin-top: 10px;
+  }
+  
+  .isAditionalInfoButton{
+    width: 40px;
+    height: 25px;
+    border-radius: 30px;
+    border: 1px solid;
+    border-color: #596A47;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px ;
+    background-color: #DEEED5;
+  }
+
+  .isAditionalInfoButtonImage{
+    width: 20px;
+    height: 15px;
+  }
