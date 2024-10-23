@@ -7,6 +7,10 @@ import AddPicture from "../../images/add_picture.png";
 import PedigreeLoader from './PedigreeLoader';
 import "./AddDogNode.scss"
 import SearchIcon from '@mui/icons-material/Search';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import PlusIcon from "../../images/plus_icon.png"
+import TextField from '@mui/material/TextField';
 
 const db = new Dexie('PedigreeDatabase');
 db.version(1).stores({
@@ -25,8 +29,13 @@ const DogTreeElement = ({ name, requiredPosition, dogNames, openModal }) => {
     const [selectedBreed, setSelectedBreed] = useState(breeds[0]); 
     const [selectedOwner, setSelectedOwner] = useState('');
     const [allDogs, setAllDogs] = useState([]);
-
     const dropdownRef = useRef(null); 
+    const [isAditionalInfoOpen, setIsAditionalInfoOpen] = useState(false)
+    const [selectedDate, setSelectedDate] = useState(0)
+  
+    const handleAdditionalInfoClick=()=>{
+      setIsAditionalInfoOpen(!isAditionalInfoOpen)
+    }
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -224,7 +233,6 @@ const DogTreeElement = ({ name, requiredPosition, dogNames, openModal }) => {
                             </button>
                         </div>
 
-
                         {viewOption === 'myDogs' && (
                             sortedMyDogs.length > 0 ? (
                                 sortedMyDogs.map(dog => (
@@ -291,6 +299,50 @@ const DogTreeElement = ({ name, requiredPosition, dogNames, openModal }) => {
                         )}
                     </ul>
                 )}
+                <div onClick={handleAdditionalInfoClick} className='isAditionalInfoButton'>
+                            <img className='isAditionalInfoButtonImage' src={PlusIcon}/>
+                        </div>
+
+                        {isAditionalInfoOpen 
+                        ? <div className='aditionalInfoWrapper'>
+                            <DatePicker
+                                selected={selectedDate}
+                                onChange={(date) => setSelectedDate(date)}
+                                dateFormat="dd/MM/yyyy"
+                                placeholderText="Оберіть дату"
+                                isClearable
+                                className='aditionalInfoDataPicker'
+                            />
+                            <div className='aditionalInfoInputWrapper'>
+                                <p>Екстер'єр:</p>
+                                <input 
+                                    className='aditionalInfoInput' 
+                                    type="text" 
+                                    placeholder="  Екстер'єр"
+                                />
+                            </div>
+                            <div className='aditionalInfoInputWrapper'>
+                                <p>Дипломи:</p>
+                                <input 
+                                    className='aditionalInfoInput' 
+                                    type="text"
+                                    placeholder="  Дипломи"
+                                />
+                            </div>
+                            <div className='aditionalInfoInputWrapper'>
+                                <p>Власник:</p>
+                                <input 
+                                    className='aditionalInfoInput' 
+                                    type="text" 
+                                    placeholder="  Власник"
+                                />
+                            </div>
+                            
+                        </div> : 
+                        <>
+                        </>
+                    }
+
             </div>
 
             <input

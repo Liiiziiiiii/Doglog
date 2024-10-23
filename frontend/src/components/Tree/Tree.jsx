@@ -15,6 +15,7 @@ const Tree = () => {
       try {
         const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/dog-with-ancestors/${dogId}`);
         setDog(response.data);
+        console.log(response)
       } catch (error) {
         console.error('Error:', error);
       }

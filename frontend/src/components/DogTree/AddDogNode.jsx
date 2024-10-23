@@ -287,7 +287,7 @@ const App = () => {
     };
 
     const addAllDogsToDatabase = async () => {
-
+            
     };
 
     useEffect(() => {
