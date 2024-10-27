@@ -13,7 +13,7 @@ const Tree = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/dog-with-ancestors/${dogId}`);
+        const response = await axios.get(`https://cdq2m359-5254.euw.devtunnels.ms/swagger/index.html/api/DogDetails/dog-with-ancestors/${dogId}`);
         setDog(response.data);
         console.log(response)
       } catch (error) {

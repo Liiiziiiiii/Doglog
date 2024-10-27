@@ -10,7 +10,7 @@ class PedigreeLoader {
 
     async fetchPedigree(dogId, familyPosition) {
         try {
-            const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/dog-with-ancestors/${dogId}`);
+            const response = await axios.get(`https://cdq2m359-5254.euw.devtunnels.ms/swagger/index.html/api/DogDetails/dog-with-ancestors/${dogId}`);
             const dogData = response.data;
 
             await this.printAllRelatives(dogData, familyPosition);

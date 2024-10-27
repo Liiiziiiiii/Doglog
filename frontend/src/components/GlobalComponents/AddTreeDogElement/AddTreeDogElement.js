@@ -20,7 +20,7 @@ export default function AddDogTreeElement({ obj = { name: "", photo: "" }, onUpd
         const fetchData = async () => {
             if (storedUserId) {
                 try {
-                    const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/users-with-dogs/${storedUserId}`);
+                    const response = await axios.get(`https://cdq2m359-5254.euw.devtunnels.ms/swagger/index.html/api/DogDetails/users-with-dogs/${storedUserId}`);
                     const dogNames = response.data.dogs.map(dog => ({ id: dog.id, name: dog.name }));
                     //console.log('Dog Names:', dogNames);
                     setNameSuggestions(dogNames);
@@ -49,7 +49,7 @@ export default function AddDogTreeElement({ obj = { name: "", photo: "" }, onUpd
         const updatedObject = { ...localObj, id: suggestion.id, name: suggestion.name };
 
         try {
-            const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/dog-with-ancestors/${suggestion.id}`);
+            const response = await axios.get(`https://cdq2m359-5254.euw.devtunnels.ms/swagger/index.html/api/DogDetails/dog-with-ancestors/${suggestion.id}`);
             if (response.data) {
                 const ancestorsData = {
                     father: response.data.father || { id: null, name: "", photo: "" },

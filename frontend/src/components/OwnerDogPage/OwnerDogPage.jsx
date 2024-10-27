@@ -8,7 +8,7 @@ const OwnerDogPage = ({ dogId }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/dog-user/${dogId}`);
+                const response = await axios.get(`https://cdq2m359-5254.euw.devtunnels.ms/swagger/index.html/api/DogDetails/dog-user/${dogId}`);
                 console.log('Response:', response.data);
                 setUserData(response.data.owner);  
             } catch (error) {

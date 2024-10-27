@@ -14,7 +14,7 @@ const GalleryDogPage = ({ dogId }) => {
 
     const fetchDogPhotos = async () => {
         try {
-            const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/album-dog/${dogId}`);
+            const response = await axios.get(`https://cdq2m359-5254.euw.devtunnels.ms/swagger/index.html/api/DogDetails/album-dog/${dogId}`);
             console.log('Response:', response.data);
             setDogPhotos(response.data.photos);
         } catch (error) {

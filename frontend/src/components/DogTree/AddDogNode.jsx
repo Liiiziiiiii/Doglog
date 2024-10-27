@@ -271,7 +271,7 @@ const App = () => {
     useEffect(() => {
         const fetchDogNames = async () => {
             const storedUserId = localStorage.getItem('UserId');
-            const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/users-with-dogs/${storedUserId}`);
+            const response = await axios.get(`https://cdq2m359-5254.euw.devtunnels.ms/swagger/index.html/api/DogDetails/users-with-dogs/${storedUserId}`);
             const dogNames = response.data.dogs.map(dog =>
                 ({ id: dog.id, name: dog.name, photo: dog.photo, chip: dog.chip, dateBirth: dog.dateBirth, ukpms: dog.ukpms }));
             setDogNames(dogNames);

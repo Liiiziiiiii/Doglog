@@ -45,7 +45,7 @@ const AddDog = ({ dog }) => {
     if (dogId) {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/DogDetails/dog-with-ancestors/${dogId}`);
+          const response = await axios.get(`https://cdq2m359-5254.euw.devtunnels.ms/swagger/index.html/api/DogDetails/dog-with-ancestors/${dogId}`);
           const data = response.data;
 
           setFormData((prevData) => ({
@@ -100,7 +100,7 @@ const AddDog = ({ dog }) => {
     console.log("Form Data:", formData);
     try {
       const response = await axios.post(
-        "http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/Dog",
+        "https://cdq2m359-5254.euw.devtunnels.ms/swagger/index.html/api/Dog",
         formData
       );
       console.log("Response:", response);

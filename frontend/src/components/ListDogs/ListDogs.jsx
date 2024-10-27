@@ -33,7 +33,7 @@ const ListDogs = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://apiproject-prod.us-east-1.elasticbeanstalk.com/api/Dog/GetDogByBreed/${breed}`);
+                const response = await axios.get(`https://cdq2m359-5254.euw.devtunnels.ms/swagger/index.html/api/Dog/GetDogByBreed/${breed}`);
                 console.log("Response data: ", response.data);
 
                 setOriginalUserData(response.data);
