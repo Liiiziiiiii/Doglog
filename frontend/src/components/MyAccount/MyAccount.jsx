@@ -20,7 +20,7 @@ const MyAccount = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://cdq2m359-5254.euw.devtunnels.ms/swagger/index.html/api/DogDetails/users-with-dogs/${userId}`);
+                const response = await axios.get(`https://cdq2m359-5254.euw.devtunnels.ms/api/DogDetails/users-with-dogs/${userId}`);
                 console.log('Response:', response.data);
                 setUserData(response.data);
             } catch (error) {
