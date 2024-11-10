@@ -51,13 +51,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
                 <div className="Ancestors">
                     <div className="TreeElement">
                         <DogTreeElement
-                            name="Бабуся (Тато)"
+                            name="Баба (Тато)"
                             dog={dog.father?.mother}
                             requiredPosition="grandmother(father)"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Дідусь (Тато)"
+                            name="Дід (Тато)"
                             dog={dog.father?.father}
                             requiredPosition="grandfather(father)"
                             dogNames={dogNames}
@@ -65,13 +65,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
                     </div>
                     <div className="TreeElement">
                         <DogTreeElement
-                            name="Бабуся (Мама)"
+                            name="Баба (Мама)"
                             dog={dog.mother?.mother}
                             requiredPosition="grandmother(mother)"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Дідусь (Мама)"
+                            name="Дід (Мама)"
                             dog={dog.mother?.father}
                             requiredPosition="grandfather(mother)"
                             dogNames={dogNames}
@@ -81,13 +81,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
                 <div className="ThirdGeneration">
                     <div className="TreeElementThirdGeneration">
                         <DogTreeElement
-                            name="Прабабуся (Бабуся)"
+                            name="Прабаба (Баба)"
                             dog={dog.mother?.mother?.mother}
                             requiredPosition="great-grandmother(grandmother(father))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прадідусь (Бабуся)"
+                            name="Прадід (Баба)"
                             dog={dog.mother?.mother?.father}
                             requiredPosition="great-grandfather(grandmother(father))"
                             dogNames={dogNames}
@@ -95,13 +95,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
                     </div>
                     <div className="TreeElementThirdGeneration">
                         <DogTreeElement
-                            name="Прабабуся (Дідусь)"
+                            name="Прабаба (Дід)"
                             dog={dog.father?.mother?.mother}
                             requiredPosition="great-grandmother(grandfather(father))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прадідусь (Дідусь)"
+                            name="Прадід (Дід)"
                             dog={dog.father?.mother?.father}
                             requiredPosition="great-grandfather(grandfather(father))"
                             dogNames={dogNames}
@@ -110,13 +110,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
 
                     <div className="TreeElementThirdGeneration">
                         <DogTreeElement
-                            name="Прабабуся (Бабуся)"
+                            name="Прабаба (Баба)"
                             dog={dog.mother?.mother?.mother}
                             requiredPosition="great-grandmother(grandmother(mother))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прадідусь (Бабуся)"
+                            name="Прадід (Баба)"
                             dog={dog.mother?.mother?.father}
                             requiredPosition="great-grandfather(grandmother(mother))"
                             dogNames={dogNames}
@@ -124,13 +124,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
                     </div>
                     <div className="TreeElementThirdGeneration">
                         <DogTreeElement
-                            name="Прабабуся (Дідусь)"
+                            name="Прабаба (Дід)"
                             dog={dog.father?.mother?.mother}
                             requiredPosition="great-grandmother(grandfather(mother))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прадідусь (Дідусь)"
+                            name="Прадід (Дід)"
                             dog={dog.father?.mother?.father}
                             requiredPosition="great-grandfather(grandfather(mother))"
                             dogNames={dogNames}
@@ -142,13 +142,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
                 <div className="FourGeneration">
                     <div className="TreeElementFourGeneration">
                         <DogTreeElement
-                            name="Прапрабабуся (Прабабуся)"
+                            name="Прапрабаба (Прабаба)"
                             dog={dog.mother?.mother?.mother}
                             requiredPosition="great-grandmother(great-grandmother(grandmother(father)))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прапрадідусь (Прабабуся)"
+                            name="Прапрадід (Прабаба)"
                             dog={dog.mother?.mother?.father}
                             requiredPosition="great-grandfather(great-grandmother(grandmother(father)))"
                             dogNames={dogNames}
@@ -156,13 +156,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
                     </div>
                     <div className="TreeElementFourGeneration">
                         <DogTreeElement
-                            name="Прапрабабуся (Прадідусь)"
+                            name="Прапрабаба (Прадід)"
                             dog={dog.father?.mother?.mother}
                             requiredPosition="great-grandmother(great-grandfather(grandmother(father)))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прапрадідусь (Прадідусь)"
+                            name="Прапрадід (Прадід)"
                             dog={dog.father?.mother?.father}
                             requiredPosition="great-grandfather(great-grandfather(grandmother(father)))"
                             dogNames={dogNames}
@@ -171,13 +171,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
 
                     <div className="TreeElementFourGeneration">
                         <DogTreeElement
-                            name="Прапрапрабабуся (Прабабуся)"
+                            name="Прапрапрабаба (Прабаба)"
                             dog={dog.mother?.mother?.mother?.mother}
                             requiredPosition="great-grandmother(great-grandmother(grandfather(father)))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прапрапрадідусь (Прабабуся)"
+                            name="Прапрапрадід (Прабаба)"
                             dog={dog.mother?.mother?.mother?.father}
                             requiredPosition="great-grandfather(great-grandmother(grandfather(father)))"
                             dogNames={dogNames}
@@ -185,13 +185,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
                     </div>
                     <div className="TreeElementFourGeneration">
                         <DogTreeElement
-                            name="Прапрапрабабуся (Прадідусь)"
+                            name="Прапрапрабаба (Прадід)"
                             dog={dog.father?.mother?.mother?.mother}
                             requiredPosition="great-grandmother(great-grandfather(grandfather(father)))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прапрапрадідусь (Прадідусь)"
+                            name="Прапрапрадід (Прадід)"
                             dog={dog.father?.mother?.mother?.father}
                             requiredPosition="great-grandfather(great-grandfather(grandfather(father)))"
                             dogNames={dogNames}
@@ -200,13 +200,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
 
                     <div className="TreeElementFourGeneration">
                         <DogTreeElement
-                            name="Прапрабабуся (Прабабуся)"
+                            name="Прапрабаба (Прабаба)"
                             dog={dog.mother?.mother?.mother}
                             requiredPosition="great-grandmother(great-grandmother(grandmother(mother)))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прапрадідусь (Прабабуся)"
+                            name="Прапрадід (Прабаба)"
                             dog={dog.mother?.mother?.father}
                             requiredPosition="great-grandfather(great-grandmother(grandmother(mother)))"
                             dogNames={dogNames}
@@ -214,13 +214,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
                     </div>
                     <div className="TreeElementFourGeneration">
                         <DogTreeElement
-                            name="Прапрабабуся (Прадідусь)"
+                            name="Прапрабаба (Прадід)"
                             dog={dog.father?.mother?.mother}
                             requiredPosition="great-grandmother(great-grandfather(grandmother(mother)))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прапрадідусь (Прадідусь)"
+                            name="Прапрадід (Прадід)"
                             dog={dog.father?.mother?.father}
                             requiredPosition="great-grandfather(great-grandfather(grandmother(mother)))"
                             dogNames={dogNames}
@@ -229,13 +229,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
 
                     <div className="TreeElementFourGeneration">
                         <DogTreeElement
-                            name="Прапрабабуся (Прабабуся)"
+                            name="Прапрабаба (Прабаба)"
                             dog={dog.mother?.mother?.mother}
                             requiredPosition="great-grandmother(great-grandmother(grandfather(mother)))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прапрадідусь (Прабабуся)"
+                            name="Прапрадід (Прабаба)"
                             dog={dog.mother?.mother?.father}
                             requiredPosition="great-grandfather(great-grandmother(grandfather(mother)))"
                             dogNames={dogNames}
@@ -243,13 +243,13 @@ const DogTreeNode = ({ dog, dogNames }) => {
                     </div>
                     <div className="TreeElementFourGeneration">
                         <DogTreeElement
-                            name="Прапрабабуся (Прадідусь)"
+                            name="Прапрабаба (Прадід)"
                             dog={dog.father?.mother?.mother}
                             requiredPosition="great-grandmother(great-grandfather(grandfather(mother)))"
                             dogNames={dogNames}
                         />
                         <DogTreeElement
-                            name="Прапрадідусь (Прадідусь)"
+                            name="Прапрадід (Прадід)"
                             dog={dog.father?.mother?.father}
                             requiredPosition="great-grandfather(great-grandfather(grandfather(mother)))"
                             dogNames={dogNames}
